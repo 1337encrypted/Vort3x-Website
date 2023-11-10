@@ -1,0 +1,31 @@
+#tiresult {
+    font-size: 9px;
+    background-color: #000000;
+    font-weight: bold;
+    padding: 4px 5px;
+    --fs: 9px;
+    text-align: center;
+    /* Center the text horizontally */
+ }
+
+ body{
+    color:#FFFFFF;
+    background-color:#000000;
+    margin:2px;
+    padding:0px;
+    font-size:12px;
+    font-family:sans-serif
+}
+
+pre{
+    background-color:white;
+    color:black;
+    padding:20px;
+    padding-top:5px;
+    margin:0px;
+    text-align:left;
+    font-size:12px;
+    text-decoration:none;
+    overflow:hidden;
+    -webkit-text-size-adjust:100%
+}
