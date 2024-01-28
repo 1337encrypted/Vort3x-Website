@@ -6,15 +6,15 @@
     --fs: 9px;
     text-align: center;
     /* Center the text horizontally */
- }
+}
 
- body{
+body{
     color:#FFFFFF;
     background-color:#000000;
     margin:2px;
     padding:0px;
     font-size:12px;
-    font-family:sans-serif
+    font-family: 'Source Code Pro', monospace;
 }
 
 pre{
@@ -28,4 +28,39 @@ pre{
     text-decoration:none;
     overflow:hidden;
     -webkit-text-size-adjust:100%
+}
+
+
+.intro{
+    text-align:justify;
+    height: 100px;
+    width: 700px;
+    margin-top: 30px;
+    margin-bottom: 1px;
+    font-size: 15px;
+    color:white;
+}
+
+table, th, td {
+    border: 1px solid white;
+    border-collapse: collapse;
+    
+}
+
+table{
+    margin-top: 30px;
+    width: 700px;
+}
+
+td{
+    height: 25px;
+    color: black;
+}
+
+#dark{
+    background-color:#FDDA0D;
+}
+
+#light{
+    background-color:#FFFF8F;
 }
