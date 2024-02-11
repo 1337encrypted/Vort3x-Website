@@ -1,66 +1,243 @@
-#tiresult {
-    font-size: 9px;
-    background-color: #000000;
-    font-weight: bold;
-    padding: 4px 5px;
-    --fs: 9px;
-    text-align: center;
-    /* Center the text horizontally */
+*,
+::before,
+::after {
+  box-sizing: border-box;
 }
 
-body{
-    color:#FFFFFF;
-    background-color:#000000;
-    margin:2px;
-    padding:0px;
-    font-size:12px;
-    font-family: 'Source Code Pro', monospace;
+html::-webkit-scrollbar{
+  width: 0.5vw;
 }
 
-pre{
-    background-color:white;
-    color:black;
-    padding:20px;
-    padding-top:5px;
-    margin:0px;
-    text-align:left;
-    font-size:12px;
-    text-decoration:none;
-    overflow:hidden;
-    -webkit-text-size-adjust:100%
+html::-webkit-scrollbar-thumb{
+  background-color: #004D80;
+}
+
+/* html::-webkit-scrollbar-track{
+  background-color: ;
+} */
+
+html, body {
+  height: 100%;
+  margin: 0; 
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: black; 
+  font-family: 'ProFont';
+  color: white;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 100;;
+}
+
+header section.logo{
+  margin: 1px;
+  /* margin-top: 70px; */
+  font-size: 10px;
+  font-weight: bold;
+
+  padding:1px;
+  text-align:center;
+  width:795px;
+}
+
+header nav {
+  margin: 1px;
+  width: 100%;
+  height: 40px;
+  padding: 5px;
+  background-color: #bfbe7d;
+  text-align: center; 
+}
+
+header nav ul {
+  /* background-color:white; */
+  margin: 0;
+  padding: 0;
+  padding-top: 0px;
+  /* text-transform: lowercase; */
+  font-size: 30px;
+  }
+
+header nav ul li {
+  display: inline;
+  list-style-type: none; 
+}
+
+header nav a:link {
+  padding: 3px 15px 3px 15px;
+  text-decoration: none; 
+}
+
+header nav a:visited{
+  text-decoration: none; 
+  color: #00002d;
+}
+
+header nav a:visited:hover, header nav a:link:hover{
+  color: white;
+  background-color: #333a4f;
+}
+
+header nav a:link.current {
+  background-color: #ff9040;
+  color: #00002d;
+  border: none;
+}
+
+header nav a:visited.current{
+  background-color: black;
+  color: white;
 }
 
 
-.intro{
-    text-align:justify;
-    height: 100px;
-    width: 700px;
-    margin-top: 30px;
-    margin-bottom: 1px;
-    font-size: 15px;
-    color:white;
+article {
+  margin-top: 50px;
+  color: #ffffff; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
 }
 
-table, th, td {
-    border: 1px solid white;
-    border-collapse: collapse;
-    
+article h1{
+  text-align: center;
+  font-size: 15px;
+  letter-spacing: 4px;
+  color:#FFFFFF;
+  text-decoration: none;
+  padding: 6px;
+  font-weight: bold
 }
 
-table{
-    margin-top: 30px;
-    width: 700px;
+article a:link, article a:visited {
+  color: #6191e9; 
 }
 
-td{
-    height: 25px;
-    color: black;
+article a:link:hover, article a:visited:hover {
+  color: #81b1ff; 
 }
 
-#dark{
-    background-color:#FDDA0D;
+.around{
+  border:1px solid #ffffae;
+  padding:1px;
+  text-align:center;
+  width:795px;
 }
 
-#light{
-    background-color:#FFFF8F;
+article .opt{
+  background-color:#a59c78;
+  border-bottom:1px solid black;
+  padding:4px;
+  padding-left:6px;
+  text-align:left;
+  color: black;
+}
+
+article .opt-bottom{
+  background-color:#999;
+  color:#000;
+  border-bottom:1px solid black;
+  padding:4px;
+  padding-left:6px;
+  text-align:left
+}
+
+article pre{
+  background-color:white;
+  color:black;
+  padding:20px;
+  padding-top:5px;
+  margin:0px;
+  text-align:left;
+  font-size:12px;
+  text-decoration:none;
+  overflow:hidden;
+  -webkit-text-size-adjust:100%;
+}
+
+.level{
+  width:100%;
+  font-size:15px
+}
+
+.level a{
+    color:black !important;
+    font-weight:bold;
+    text-decoration: none;
+}
+
+.level td{
+    border-bottom:1px solid gray;
+    padding:3px;
+    background-color:#ffffae;
+    color: Black;
+    padding-left:5px;
+    padding-right:5px
+}
+
+.level tr:nth-child(even) td{
+    background-color: #acaa70;
+}
+
+.level tr:hover a{
+    color: white !important;
+    text-decoration: none;
+}
+.level tr:hover td{
+    background-color:#000;
+    color: white;
+}
+
+
+footer {
+  display: flex;
+  flex-direction:column;
+  justify-content: space-evenly;
+  align-items: center;
+  color: #ffffae;
+  font-size: 11px;
+  text-align: center;
+}
+
+footer p {
+  display: table-cell;
+  vertical-align: bottom;
+  padding: 1em;
+}
+
+footer span.text {
+  margin-left: 1em;
+  margin-right: 1em;
+  white-space: nowrap; 
+}
+
+footer a:link, footer a:visited {
+  color: #ffffae;
+  }
+
+footer a:link:hover, footer a:visited:hover {
+  color: #acaa70; 
+}
+
+@font-face {
+  font-family: ProFont;
+  src: url(/ProFont\ For\ Powerline.ttf);
+}
+
+@media (max-width: 760px) {
+  footer {
+    font-size: 6px;
+  }
 }
