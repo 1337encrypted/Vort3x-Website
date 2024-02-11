@@ -130,7 +130,7 @@ article a:link:hover, article a:visited:hover {
 }
 
 .around{
-  border:1px solid #54549c;
+  border:1px solid grey;
   padding:1px;
   text-align:center;
   width:795px;
@@ -138,10 +138,9 @@ article a:link:hover, article a:visited:hover {
 
 article .opt{
   background-color:#333333;
-  border-bottom:1px solid black;
   padding:4px;
   padding-left:6px;
-  text-align:left
+  text-align:left;;
 }
 
 article .opt-bottom{

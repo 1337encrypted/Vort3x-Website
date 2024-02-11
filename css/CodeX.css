@@ -56,7 +56,7 @@ header nav {
   width: 100%;
   height: 40px;
   padding: 5px;
-  background-color: #bfbe7d;
+  background-color: #fdda0e;
   text-align: center; 
 }
 
@@ -130,19 +130,18 @@ article a:link:hover, article a:visited:hover {
 }
 
 .around{
-  border:1px solid #ffffae;
+  border:1px solid grey;
   padding:1px;
   text-align:center;
   width:795px;
 }
 
 article .opt{
-  background-color:#a59c78;
-  border-bottom:1px solid black;
+  background-color:#333333;
   padding:4px;
   padding-left:6px;
   text-align:left;
-  color: black;
+  color: white;
 }
 
 article .opt-bottom{
@@ -181,14 +180,14 @@ article pre{
 .level td{
     border-bottom:1px solid gray;
     padding:3px;
-    background-color:#ffffae;
+    background-color:#ffff8f;
     color: Black;
     padding-left:5px;
     padding-right:5px
 }
 
 .level tr:nth-child(even) td{
-    background-color: #acaa70;
+    background-color: #fdda0e;
 }
 
 .level tr:hover a{
@@ -224,11 +223,11 @@ footer span.text {
 }
 
 footer a:link, footer a:visited {
-  color: #ffffae;
+  color: #ffff8f;
   }
 
 footer a:link:hover, footer a:visited:hover {
-  color: #acaa70; 
+  color: #fdda0e; 
 }
 
 @font-face {
