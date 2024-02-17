@@ -1,182 +1,199 @@
-*,
-::before,
-::after {
-  box-sizing: border-box;
+@font-face {
+    font-family: ProFont;
+    src: url(/fonts/ProFont.ttf);
 }
 
-html::-webkit-scrollbar{
-  width: 0.5vw;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-html::-webkit-scrollbar-thumb{
-  background-color: #004D80;
-}
-
-/* html::-webkit-scrollbar-track{
-  background-color: ;
-} */
-
-html, body {
-  height: 100%;
-  margin: 0; 
-  padding: 0;
+section {
+    /* margin: 5px 0px; */
+    /* padding: 5px 0px; */
+    text-align: center;
+    width: 100%;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  background-color: black; 
-  font-family: 'ProFont';
-  color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: "ProFont", monospace;
+    font-size: 20px;
+    background-color: black;
 }
 
-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  top: 100;;
+body header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    /* padding: 0px 10%; */
+    width: 800px;
+    /* border: 1px solid white; */
 }
 
-header section.logo{
-  margin: 1px;
-  /* margin-top: 70px; */
-  font-size: 10px;
-  font-weight: bold;
-
-  padding:1px;
-  text-align:center;
-  width:795px;
+body header .headerTop {
+    margin-top: 10px;
 }
 
-header nav {
-  margin: 1px;
-  width: 100%;
-  height: 40px;
-  padding: 5px;
-  background-color: #05eac7;
-  text-align: center; 
+body header .headerTop .logo {
+    font-size: 13px; 
 }
 
-header nav ul {
-  /* background-color:white; */
-  margin: 0;
-  padding: 0;
-  padding-top: 0px;
-  /* text-transform: lowercase; */
-  font-size: 30px;
-  }
-
-header nav ul li {
-  display: inline;
-  list-style-type: none; 
+body header .headerBottom {
+    padding: 0px;
+    margin-bottom: 10px;
+    position: relative;
 }
 
-header nav a:link {
-  padding: 3px 15px 3px 15px;
-  text-decoration: none; 
-}
-
-header nav a:visited{
-  text-decoration: none; 
-  color: #00002d;
-}
-
-header nav a:visited:hover, header nav a:link:hover{
-  color: white;
-  background-color: #333a4f;
-}
-
-header nav a:link.current {
-  background-color: #ff9040;
-  color: #00002d;
-  border: none;
-}
-
-header nav a:visited.current{
-  background-color: black;
-  color: white;
-}
-
-
-article {
-  margin-top: 50px;
-  color: #ffffff; 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  
-}
-
-article h1{
-  text-align: center;
-  font-size: 15px;
-  letter-spacing: 4px;
-  color:#FFFFFF;
-  text-decoration: none;
-  padding: 6px;
-  font-weight: bold
-}
-
-article a:link, article a:visited {
-  color: #6191e9; 
-}
-
-article a:link:hover, article a:visited:hover {
-  color: #81b1ff; 
-}
-
-.around{
-  border:1px solid grey;
-  padding:1px;
-  text-align:center;
-  width:795px;
-}
-
-article .opt{
-  background-color:#333333;
-  padding:4px;
-  padding-left:6px;
-  text-align:left;
-  color: white;
-}
-
-article .opt-bottom{
-  background-color:#999;
-  color:#000;
-  border-bottom:1px solid black;
-  padding:4px;
-  padding-left:6px;
-  text-align:left
-}
-
-article pre{
-  background-color:white;
-  color:black;
-  padding:20px;
-  padding-top:5px;
-  margin:0px;
-  text-align:left;
-  font-size:12px;
-  text-decoration:none;
-  overflow:hidden;
-  -webkit-text-size-adjust:100%;
-}
-
-.level{
-  width:100%;
-  font-size:15px
-}
-
-.level a{
-    color:black !important; 
-    font-weight:bold;
+body header .headerBottom li, a, button{
+    font-family: "ProFont", monospace;
+    font-size: 30px;
+    color: black;
     text-decoration: none;
 }
-.level td{
+
+body header section nav {
+    margin: 1px;
+    width: 100%;
+    /* height: 40px; */
+    padding: 5px;
+    background-color: #05eac7;
+}
+
+body header section nav .nav_links {
+    list-style: none;
+    background-color: #05eac7;
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid red; */
+}
+
+body header section nav .nav_links li {
+    display: inline-block;
+    background-color: #05eac7;
+    /* padding: 5px; */
+    margin: 0px 20px;
+}
+
+body header section nav .nav_links li a {
+    background-color: #05eac7;
+    padding: 3px 15px 3px 15px;
+    transition: all 0.3s ease 0s;
+}
+
+body header section nav .nav_links li a:hover{
+    /* background-color: grey; */
+    color: white !important;
+    color: #00002d;
+}
+
+body header section nav .nav_links .current:visited{
+    background-color: #333333;
+    color: white;
+}
+
+/* body header section nav .nav_links .current:hover{
+    background-color: black !important;
+    color: white !important;
+} */
+
+button {
+    background-color: rgba(0,0,45,1);
+    border: none;
+    cursor: pointer;
+    font-size: 11px;
+}
+
+button:hover {
+    /* background-color: rgba(0,0,45,0.8); */
+    color: skyblue;
+}
+
+
+body header .headerBottom .SignupButton {
+    position: absolute;
+    background-color: #05eac7;
+    top: 2px;
+    right: 10px;
+    width: 45px;
+    height: 30px;
+    text-decoration: underline;
+    color: black;
+    transition: all 0.3s ease 0s;
+}
+
+body main {
+    width: 800px;
+    margin: 10px 0px;
+    /* border: 1px solid white; */
+}
+
+body main section p {
+    font-size: 15px;
+    letter-spacing: 4px;
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    text-align: center; 
+}
+
+
+body main article {
+    border:1px solid grey;
+    padding:1px;
+    font-size: 15px;
+    width:100%;
+  }
+  
+body main article .articleHeader{
+    background-color:#333333;
+    color:white;
+    padding:4px;
+    padding-left:8px;
+    text-align:left
+  }
+  
+body main article .articleHeaderBottom{
+    background-color:#999;
+    color:#000;
+    border-bottom:1px solid black;
+    padding:4px;
+    padding-left: 8px;
+    text-align:left
+  }
+  
+body main article pre {
+    background-color:white;
+    color:black;
+    padding:20px;
+    padding-top:5px;
+    margin:0px;
+    text-align:left;
+    font-size: 12px;
+    text-decoration:none;
+    overflow:hidden;
+    -webkit-text-size-adjust:100%;
+  }
+
+body main article table.level{
+  width:100%;
+  font-size:15px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+body main article table.level a{
+    color:black !important; 
+    font-size: 15px;
+    text-decoration: none;
+}
+body main article table.level td{
     border-bottom:1px solid gray;
     padding:3px;
     background-color: #05eac7;
@@ -184,58 +201,39 @@ article pre{
     padding-left:5px;
     padding-right:5px
 }
-.level tr:nth-child(even) td{
+body main article table.level tr:nth-child(even) td{
     background-color: #00a382;
 }
 
-.level tr:hover a{
-    /* color:#FFF */
-    color: white !important;
+body main article table.level tr:hover a{
+    color: white !important; 
     text-decoration: none;
 }
-.level tr:hover td{
-    background-color:#000;
-    /* color:#FFF */
+body main article table.level tr:hover td{
+    background-color:#333333;
     color: white;
 }
 
-footer {
-  display: flex;
-  flex-direction:column;
-  justify-content: space-evenly;
-  align-items: center;
-  color: #00e6d7;
-  font-size: 11px;
-  text-align: center;
+body footer {
+    color: #05eac7;
+    width: 800px;
 }
 
-footer p {
-  display: table-cell;
-  vertical-align: bottom;
-  padding: 1em;
+body footer section p a{
+    font-size: 11px;
+    padding: 1px;
 }
 
-footer span.text {
-  margin-left: 1em;
-  margin-right: 1em;
-  white-space: nowrap; 
-}
-
-footer a:link, footer a:visited {
-  color: #00e6d7;
+body footer section p span.text{
+    font-size: 11px;
+    padding: 1px;
+    white-space: nowrap; 
   }
-
-footer a:link:hover, footer a:visited:hover {
-  color: #008c82; 
-}
-
-@font-face {
-  font-family: ProFont;
-  src: url(/ProFont\ For\ Powerline.ttf);
-}
-
-@media (max-width: 760px) {
-  footer {
-    font-size: 6px;
+  
+body footer section a:link, footer a:visited {
+    color: #05eac7;
+    }
+  
+body footer a:link:hover, footer a:visited:hover {
+    color: #00a382; 
   }
-}
