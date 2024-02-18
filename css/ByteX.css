@@ -143,6 +143,10 @@ body main section p {
     text-align: center; 
 }
 
+body main section p.levelTitle {
+    color: #05eac7;
+    font-size: larger;
+}
 
 body main article {
     border:1px solid grey;
@@ -189,7 +193,6 @@ body main article table.level{
 }
 
 body main article table.level a{
-    color:black !important; 
     font-size: 15px;
     text-decoration: none;
 }
@@ -214,6 +217,14 @@ body main article table.level tr:hover td{
     color: white;
 }
 
+body main article table.level tr td.active{
+    background-color: black;
+    color: white;
+}
+
+body main article table.level tr td.active a{
+    color: white;
+}
 body footer {
     color: #05eac7;
     width: 800px;

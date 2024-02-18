@@ -143,6 +143,11 @@ body main section p {
     text-align: center; 
 }
 
+body main section p.levelTitle {
+    color: #ffff8f;
+    font-size: larger;
+}
+
 
 body main article {
     border:1px solid grey;
@@ -207,12 +212,20 @@ body main article table.level tr:nth-child(even) td{
 }
 
 body main article table.level tr:hover a{
-    color: white !important;
-    text-decoration: none;
+    color: white;
 }
 
 body main article table.level tr:hover td{
     background-color:#333333;
+    color: white;
+}
+
+body main article table.level tr td.active{
+    background-color: black;
+    color: white;
+}
+
+body main article table.level tr td.active a{
     color: white;
 }
 

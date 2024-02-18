@@ -144,6 +144,11 @@ body main section p {
     text-align: center; 
 }
 
+body main section p.levelTitle {
+    color: #ff6600;
+    font-size: larger;
+}
+
 
 body main article {
     border:1px solid grey;

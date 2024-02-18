@@ -149,6 +149,11 @@ body main section p {
     text-align: center; 
 }
 
+body main section p.levelTitle {
+    color: #8b8bff;
+    font-size: larger;
+}
+
 
 body main article {
     border:1px solid grey;
@@ -195,7 +200,7 @@ body main article table.level{
 }
 
 body main article table.level a{
-    color: white !important;
+    color: white;
     font-size: 15px;
     text-decoration: none;
 }
@@ -213,14 +218,22 @@ body main article table.level tr:nth-child(even) td{
     background-color: #5267b9;
 }
 
-body main article table.level tr:hover a{
-    color: black !important;
-    text-decoration: none;
+body main article table.level tr td:hover a{
+    color: black;
 }
 
 body main article table.level tr:hover td{
-    background-color: whitesmoke;
+    background-color: white;
     color: black;
+}
+
+body main article table.level tr td.active{
+    background-color: black;
+    color: white;
+}
+
+body main article table.level tr td.active a{
+    color: white;
 }
 
 body footer {
