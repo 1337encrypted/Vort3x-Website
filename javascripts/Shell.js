@@ -28,11 +28,11 @@ var textContents = {
 
     'text8': '<h3> Level 0x07</h3><p>The passphrase for advancing to the next level is located in the file data.txt next to the term "millionth."<br>Commands that might be useful for solving this level include:<br><a href="https://www.geeksforgeeks.org/man-command-in-linux-with-examples/">man</a>, <a href="https://www.geeksforgeeks.org/grep-command-in-unixlinux/">grep</a>,<a href="https://www.geeksforgeeks.org/sort-command-linuxunix-examples/">sort</a> ,<a href="https://www.geeksforgeeks.org/uniq-command-in-linux-with-examples-2/">uniq</a> ,<a href="https://www.geeksforgeeks.org/string-manipulation-in-shell-scripting/">strings</a> , <a href="https://www.geeksforgeeks.org/convert-text-file-strings-into-base64-encoding/">base64</a>,<a href="">tr</a> , tar, gzip, bzip2, xxd.</p>',
 
-    'text9': '<h3> Level 0x01</h3>',
+    'text9': '<h3> Level 0x08</h3>',
 
-    'text10': '<h3> Level 0x01</h3>',
+    'text10': '<h3> Level 0x09</h3>',
 
-    'text11': '<h3> Level 0x01</h3>',
+    'text11': '<h3> Level 0x010</h3>',
 };
 
 // JavaScript function to display text based on clicked link
