@@ -192,6 +192,25 @@ body main article pre {
     -webkit-text-size-adjust:100%;
   }
 
+body main article pre code {
+    font-family: Hack, 'Courier New', Courier, monospace;
+    font-size: 12px;
+}
+
+body main article pre code a{
+    font-family: Courier, monospace;
+    font-size: large;
+}
+
+body main article pre code a:hover {
+    text-decoration: underline;
+}
+
+body main article pre code #hint {
+    font-size: small;
+    font-weight: 600;
+}
+
 body main article table.level{
     width:100%;
     font-size:15px;
@@ -218,23 +237,24 @@ body main article table.level tr:nth-child(even) td{
     background-color: #5267b9;
 }
 
-body main article table.level tr td:hover a{
+body main article table.level tr:hover td a{
     color: black;
 }
 
 body main article table.level tr:hover td{
+    cursor: pointer;
     background-color: white;
     color: black;
 }
 
-body main article table.level tr td.active{
+/* body main article table.level tr {
     background-color: black;
     color: white;
 }
 
-body main article table.level tr td.active a{
+body main article table.level tr td:active a{
     color: white;
-}
+} */
 
 body footer {
     

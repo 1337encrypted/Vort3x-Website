@@ -220,14 +220,14 @@ body main article table.level tr:hover td{
     color: white;
 }
 
-body main article table.level tr td.active{
+/* body main article table.level tr td.active{
     background-color: black;
     color: white;
 }
 
 body main article table.level tr td.active a{
     color: white;
-}
+} */
 
 body footer {
     color: #ffff8f;
