@@ -185,6 +185,25 @@ body main article pre {
     -webkit-text-size-adjust:100%;
   }
 
+body main article pre code {
+    font-family: Hack, 'Courier New', Courier, monospace;
+    font-size: 12px;
+}
+
+body main article pre code a{
+    font-family: Courier, monospace;
+    font-size: large;
+}
+
+body main article pre code a:hover {
+    text-decoration: underline;
+}
+
+body main article pre code #hint {
+    font-size: small;
+    font-weight: 600;
+}
+
 body main article table.level{
   width:100%;
   font-size:15px;
