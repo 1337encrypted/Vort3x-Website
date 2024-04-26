@@ -244,12 +244,17 @@ body footer section p span.text{
     font-size: 11px;
     padding: 1px;
     white-space: nowrap; 
-  }
+}
   
 body footer section a:link, footer a:visited {
     color: #ffff8f;
-    }
+}
   
 body footer a:link:hover, footer a:visited:hover {
     color: #fdda0e; 
-  }
+}
+
+#textBox {
+    font-family: Hack, 'Courier New', Courier, monospace;
+    font-size: 12px;
+}

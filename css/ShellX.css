@@ -181,6 +181,7 @@ body main article .articleHeaderBottom{
   
 body main article pre {
     background-color:white;
+    font-family: Hack, 'Courier New', Courier, monospace;
     color:black;
     padding:20px;
     padding-top:5px;
@@ -192,10 +193,9 @@ body main article pre {
     -webkit-text-size-adjust:100%;
   }
 
-body main article pre code {
-    font-family: Hack, 'Courier New', Courier, monospace;
+/* body main article pre code {
     font-size: 12px;
-}
+} */
 
 body main article pre code a{
     font-family: Courier, monospace;
@@ -260,7 +260,7 @@ body footer {
     
     color: #8b8bff;
     width: 800px;
-  }
+}
 
 body footer section p a{
     font-size: 11px;
@@ -271,12 +271,17 @@ body footer section p span.text{
     font-size: 11px;
     padding: 1px;
     white-space: nowrap; 
-  }
+}
   
 body footer section a:link, footer a:visited {
     color: #8b8bff;
-    }
+}
   
 body footer a:link:hover, footer a:visited:hover {
     color: #5267b9; 
-  }
+} 
+
+#textBox {
+    font-family: Hack, 'Courier New', Courier, monospace;
+    font-size: 12px;
+}
