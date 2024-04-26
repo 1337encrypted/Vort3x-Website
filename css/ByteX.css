@@ -153,7 +153,7 @@ body main article {
     padding:1px;
     font-size: 15px;
     width:100%;
-  }
+}
   
 body main article .articleHeader{
     background-color:#333333;
@@ -161,7 +161,7 @@ body main article .articleHeader{
     padding:4px;
     padding-left:8px;
     text-align:left
-  }
+}
   
 body main article .articleHeaderBottom{
     background-color:#999;
@@ -170,7 +170,7 @@ body main article .articleHeaderBottom{
     padding:4px;
     padding-left: 8px;
     text-align:left
-  }
+}
   
 body main article pre {
     background-color:white;
@@ -182,8 +182,44 @@ body main article pre {
     font-size: 12px;
     text-decoration:none;
     overflow:hidden;
+    line-height: 1;
     -webkit-text-size-adjust:100%;
-  }
+}
+
+body main article pre code #pageTitle {
+    text-align: center;
+    font-size: x-large;
+    margin: 1em;
+}
+
+
+body main article pre code div.pageHeading1 {
+    font-size: medium;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    padding: 1em;
+    /* margin-top: 50px; */
+    /* overflow-x: auto; */
+}
+
+body main article pre code li{
+    font-size:small;
+    line-height: 1.5;
+    text-indent: 30px;
+}
+
+body main article pre code p{
+    font-size: medium;
+}
+
+
+body main article pre code span.keyword {
+    color: #333; /* Darker color for keywords */
+}
+
+body main article pre code span.function {
+    color: #007bff; /* Blue for functions */
+}
 
 body main article pre code {
     font-family: Hack, 'Courier New', Courier, monospace;
