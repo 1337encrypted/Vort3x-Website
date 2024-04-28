@@ -22,5 +22,5 @@ function displayText(contentId) {
     articleHeaderBottom.innerHTML = contentId;
 
     var textBox = document.getElementById("textBox");
-    textBox.innerHTML = textContents[contentId] || 'Text not found!';
+    textBox.innerHTML = textContents[contentId] || 'Text not found! Work in progress';
 }

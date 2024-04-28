@@ -63,12 +63,12 @@ body header section nav {
     width: 100%;
     /* height: 40px; */
     padding: 5px;
-    background-color: #05eac7;
+    background-color: #00eac6;
 }
 
 body header section nav .nav_links {
     list-style: none;
-    background-color: #05eac7;
+    background-color: #00eac6;
     margin: 0;
     padding: 0;
     /* border: 1px solid red; */
@@ -76,13 +76,13 @@ body header section nav .nav_links {
 
 body header section nav .nav_links li {
     display: inline-block;
-    background-color: #05eac7;
+    background-color: #00eac6;
     /* padding: 5px; */
     margin: 0px 20px;
 }
 
 body header section nav .nav_links li a {
-    background-color: #05eac7;
+    background-color: #00eac6;
     padding: 3px 15px 3px 15px;
     transition: all 0.3s ease 0s;
 }
@@ -118,7 +118,7 @@ button:hover {
 
 body header .headerBottom .SignupButton {
     position: absolute;
-    background-color: #05eac7;
+    background-color: #00eac6;
     top: 2px;
     right: 10px;
     width: 45px;
@@ -144,7 +144,7 @@ body main section p {
 }
 
 body main section p.levelTitle {
-    color: #05eac7;
+    color: #00eac6;
     font-size: larger;
 }
 
@@ -183,13 +183,8 @@ body main article pre {
     font-size: 12px;
     text-decoration:none;
     overflow:hidden;
-    line-height: 1;
     -webkit-text-size-adjust:100%;
 }
-
-/* body main article pre code {
-    font-size: 12px;
-} */
 
 body main article pre code #pageTitle {
     text-align: center;
@@ -197,25 +192,29 @@ body main article pre code #pageTitle {
     margin: 1em;
 }
 
+body main article pre code h3 {
+    display: block;
+    width: 100%;
+}
 
-body main article pre code div.pageHeading1 {
-    font-size: medium;
+body main pre code span.code {
     background-color: #f5f5f5;
     border: 1px solid #ddd;
+    display: block;
+    width: 100%;
     padding: 1em;
-    /* margin-top: 50px; */
-    /* overflow-x: auto; */
+    line-height: 1.5;
 }
 
 body main article pre code li{
     font-size:small;
     line-height: 1.5;
-    text-indent: 30px;
+    text-indent: 10px;
 }
 
-body main article pre code p{
+body main article pre code p, #textBox p{
     font-size: medium;
-    line-height: 1;
+    line-height: 1.5;
 }
 
 
@@ -255,13 +254,13 @@ body main article table.level a{
 body main article table.level td{
     border-bottom:1px solid gray;
     padding:3px;
-    background-color: #05eac7;
+    background-color: #00eac6;
     color: Black;
     padding-left:5px;
     padding-right:5px
 }
 body main article table.level tr:nth-child(even) td{
-    background-color: #00a382;
+    background-color: #00a482;
 }
 
 body main article table.level tr:hover a{
@@ -283,7 +282,7 @@ body main article table.level tr td.active a{
 } */
 
 body footer {
-    color: #05eac7;
+    color: #00eac6;
     width: 800px;
 }
 
@@ -299,14 +298,9 @@ body footer section p span.text{
 }
   
 body footer section a:link, footer a:visited {
-    color: #05eac7;
+    color: #00eac6;
 }
   
 body footer a:link:hover, footer a:visited:hover {
-    color: #00a382; 
-}
-
-#textbox {
-    font-family: Hack, 'Courier New', Courier, monospace;
-    font-size: 12px;
+    color: #F08080; 
 }

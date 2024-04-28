@@ -94,7 +94,7 @@ function displayText(contentId) {
     articleHeaderBottom.innerHTML = contentId;
 
     var textBox = document.getElementById("textBox");
-    textBox.innerHTML = textContents[contentId] || 'Text not found!';
+    textBox.innerHTML = textContents[contentId] || 'Text not found! Work in progress';
 
     // var trIndex = parseInt(contentId.substring(contentId.length - 1));
     // var table = document.querySelector('.level');           // Select the table   
