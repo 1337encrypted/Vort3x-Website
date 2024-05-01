@@ -4,17 +4,17 @@ var styleElement = document.createElement('style');
 document.head.appendChild(styleElement);
 // Object to store text contents and their corresponding IDs
 var textContents = {
-    'Level 0x00': ``,
-    'Level 0x01': ``,
-    'Level 0x02': ``,
-    'Level 0x03': ``,
-    'Level 0x04': ``,
-    'Level 0x05': ``,
-    'Level 0x06': ``,
-    'Level 0x07': ``,
-    'Level 0x08': ``,
-    'Level 0x09': ``,
-    'Level 0x0A': ``,
+    '-0x00': ``,
+    '-0x01': ``,
+    '-0x02': ``,
+    '-0x03': ``,
+    '-0x04': ``,
+    '-0x05': ``,
+    '-0x06': ``,
+    '-0x07': ``,
+    '-0x08': ``,
+    '-0x09': ``,
+    '-0x0A': ``,
 };
 
 function displayText(contentId) {
@@ -22,5 +22,5 @@ function displayText(contentId) {
     articleHeaderBottom.innerHTML = contentId;
 
     var textBox = document.getElementById("textBox");
-    textBox.innerHTML = textContents[contentId] || 'Text not found! Work in progress';
+    textBox.innerHTML = textContents[contentId] || `<center><img src="../images/lock.png" alt="🔒"><center>`;
 }

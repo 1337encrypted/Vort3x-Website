@@ -160,7 +160,7 @@ body main article {
     padding:1px;
     font-size: 15px;
     width:100%;
-  }
+}
   
 body main article .articleHeader{
     background-color:#333333;
@@ -168,7 +168,7 @@ body main article .articleHeader{
     padding:4px;
     padding-left:8px;
     text-align:left
-  }
+}
   
 body main article .articleHeaderBottom{
     background-color:#999;
@@ -177,7 +177,12 @@ body main article .articleHeaderBottom{
     padding:4px;
     padding-left: 8px;
     text-align:left
-  }
+}
+
+#textBox {
+    font-family: Hack, 'Courier New', Courier, monospace;
+    font-size: 12px;
+}
   
 body main article pre {
     background-color:white;
@@ -209,6 +214,25 @@ body main article pre code a:hover {
 body main article pre code #hint {
     font-size: small;
     font-weight: 600;
+}
+
+body main article pre code h1.pageTitle {
+    font-size: x-large;
+    /* margin: 1em; */
+}
+
+body main article pre code img{
+    margin: 30px;
+    width: 30px;
+    height: 30px;
+}
+
+body main article pre code h3 {
+    line-height: 1.5;   
+}
+
+.center {
+    text-align: center;
 }
 
 body main article table.level{
@@ -280,8 +304,3 @@ body footer section a:link, footer a:visited {
 body footer a:link:hover, footer a:visited:hover {
     color: #5267b9; 
 } 
-
-#textBox {
-    font-family: Hack, 'Courier New', Courier, monospace;
-    font-size: 12px;
-}

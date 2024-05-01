@@ -172,6 +172,11 @@ body main article .articleHeaderBottom{
     text-align:left
 }
   
+#textBox {
+    font-family: Hack, 'Courier New', Courier, monospace;
+    font-size: 12px;
+}
+
 body main article pre {
     background-color:white;
     font-family: Hack, 'Courier New', Courier, monospace;
@@ -186,10 +191,19 @@ body main article pre {
     -webkit-text-size-adjust:100%;
 }
 
-body main article pre code #pageTitle {
-    text-align: center;
+body main article pre code h1.pageTitle {
     font-size: x-large;
-    margin: 1em;
+    /* margin: 1em; */
+}
+
+body main article pre code img{
+    margin: 30px;
+    width: 30px;
+    height: 30px;
+}
+
+.center {
+    text-align: center;
 }
 
 body main article pre code h3 {
@@ -227,8 +241,10 @@ body main article pre code span.function {
 }
 
 body main article pre code a{
-    font-family: Courier, monospace;
-    font-size: large;
+    font-family: Hack, Courier, monospace;
+    font-size: small;
+    color: #0000EE;
+    text-decoration: underline;
 }
 
 body main article pre code a:hover {

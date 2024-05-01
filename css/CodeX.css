@@ -118,7 +118,7 @@ button:hover {
 
 body header .headerBottom .SignupButton {
     position: absolute;
-    background-color: #fdda0e;
+    background-color: #FFFF99;
     top: 2px;
     right: 10px;
     width: 45px;
@@ -144,7 +144,7 @@ body main section p {
 }
 
 body main section p.levelTitle {
-    color: #FFFF99;
+    color: #fdda0e;
     font-size: larger;
 }
 
@@ -171,7 +171,12 @@ body main article .articleHeaderBottom{
     padding:4px;
     padding-left: 8px;
     text-align:left
-  }
+}
+
+#textBox {
+    font-family: Hack, 'Courier New', Courier, monospace;
+    font-size: 12px;
+}
   
 body main article pre {
     background-color:white;
@@ -184,7 +189,22 @@ body main article pre {
     text-decoration:none;
     overflow:hidden;
     -webkit-text-size-adjust:100%;
-  }
+}
+
+body main article pre code h1.pageTitle {
+    font-size: x-large;
+    /* margin: 1em; */
+}
+
+body main article pre code img{
+    margin: 30px;
+    width: 30px;
+    height: 30px;
+}
+
+.center {
+    text-align: center;
+}
 
 
 body main article table.level{
@@ -200,16 +220,16 @@ body main article table.level a{
 }
 
 body main article table.level td{
-    border-bottom:1px solid #FFFF99;
+    border-bottom:1px solid #fdda0e;
     padding:3px;
-    background-color:#FFFF99;
+    background-color:#fdda0e;
     color: black;
     padding-left:5px;
     padding-right:5px
 }
 
 body main article table.level tr:nth-child(even) td{
-    background-color: #fdda0e;
+    background-color: #FFFF99;
 }
 
 body main article table.level tr:hover a{
@@ -231,7 +251,7 @@ body main article table.level tr td.active a{
 } */
 
 body footer {
-    color: #FFFF99;
+    color: #fdda0e;
     width: 800px;
 }
 
@@ -247,14 +267,9 @@ body footer section p span.text{
 }
   
 body footer section a:link, footer a:visited {
-    color: #FFFF99;
+    color: #fdda0e;
 }
   
 body footer a:link:hover, footer a:visited:hover {
-    color: #fdda0e; 
-}
-
-#textBox {
-    font-family: Hack, 'Courier New', Courier, monospace;
-    font-size: 12px;
+    color: #FFFF99; 
 }

@@ -160,7 +160,7 @@ body main article .articleHeader{
     color:white;
     padding:4px;
     padding-left:8px;
-    text-align:left
+    text-align:left;
 }
   
 body main article .articleHeaderBottom{
@@ -172,6 +172,11 @@ body main article .articleHeaderBottom{
     text-align:left
 }
   
+#textBox {
+    font-family: Hack, 'Courier New', Courier, monospace;
+    font-size: 12px;
+}
+
 body main article pre {
     background-color:white;
     font-family: Hack, 'Courier New', Courier, monospace;
@@ -186,30 +191,62 @@ body main article pre {
     -webkit-text-size-adjust:100%;
 }
 
-body main article pre code #pageTitle, .pageHeadingCenter{
+
+body main article pre code h1.pageTitle {
     font-size: x-large;
-    margin: 1em;
+    /* margin: 1em; */
+}
+
+body main article pre code img{
+    margin: 30px;
+    width: 30px;
+    height: 30px;
+}
+
+.container {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: calc(100% - 20px);
+}
+
+.center {
     text-align: center;
 }
 
+.bold {
+    font-weight: 600;
+}
 
-body main pre code span.code {
+
+body main article pre code span.code {
     background-color: #f5f5f5;
     border: 1px solid #ddd;
     display: block;
-    width: 100%;
     padding: 1em;
     line-height: 1.5;
 }
 
 body main article pre code li{
-    font-size:medium;
+    font-size: small;
     line-height: 1.5;
     text-indent: 10px;
 }
 
 body main article pre code p, #textBox p{
     font-size: medium;
+    line-height: 1.5;
+}
+
+body main article pre code table {
+    border-collapse: collapse;
+    border: 1px solid black;
+    width: 100%;
+}
+
+body main article pre code th, body main article pre code td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
     line-height: 1.5;
 }
 

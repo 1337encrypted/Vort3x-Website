@@ -155,7 +155,7 @@ body main article {
     padding:1px;
     font-size: 15px;
     width:100%;
-  }
+}
   
 body main article .articleHeader{
     background-color:#333333;
@@ -163,7 +163,7 @@ body main article .articleHeader{
     padding:4px;
     padding-left:8px;
     text-align:left
-  }
+}
   
 body main article .articleHeaderBottom{
     background-color:#999;
@@ -172,7 +172,7 @@ body main article .articleHeaderBottom{
     padding:4px;
     padding-left: 8px;
     text-align:left
-  }
+}
   
 body main article pre {
     background-color:white;
@@ -185,7 +185,54 @@ body main article pre {
     text-decoration:none;
     overflow:hidden;
     -webkit-text-size-adjust:100%;
-  }
+}
+
+body main article pre code a{
+    font-family: Hack, Courier, monospace;
+    font-size: small;
+    color: #0000EE;
+    text-decoration: underline;
+}
+
+body main article pre code h1.pageTitle {
+    font-size: x-large;
+}
+
+body main article pre code img{
+    margin: 30px;
+    width: 30px;
+    height: 30px;
+}
+
+
+body main article pre code span.code {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    display: block;
+    padding: 1em;
+    line-height: 1.5;
+}
+
+body main article pre code li{
+    font-size: small;
+    line-height: 1.5;
+    text-indent: 10px;
+}
+
+.center {
+    text-align: center;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.container {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: calc(100% - 20px);
+    /* border: 1px solid red; */
+}
 
 body footer {
     color: #aaaaaa;
@@ -202,12 +249,12 @@ body footer section p span.text{
     font-size: 11px;
     padding: 1px;
     white-space: nowrap; 
-  }
+}
   
-  body footer section a:link, footer a:visited {
+body footer section a:link, footer a:visited {
     color: #aaaaaa;
-    }
+}
   
-  body footer a:link:hover, footer a:visited:hover {
+body footer a:link:hover, footer a:visited:hover {
     color: #ffffff; 
-  }
+}
