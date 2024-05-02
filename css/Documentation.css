@@ -1,7 +1,40 @@
 @font-face {
     font-family: ProFont;
-    src: url("../fonts/ProFont.ttf");
+    src: url("../fonts/ProFont.ttf") format('truetype');
 }
+
+/* Regular */
+@font-face {
+    font-family: 'Hack';
+    src: url('../fonts/hack/Hack-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+  
+/* Bold */
+@font-face {
+    font-family: 'Hack';
+    src: url('../fonts/hack/Hack-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+  
+  /* Italic */
+  @font-face {
+    font-family: 'Hack';
+    src: url('../fonts/hack/Hack-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+  
+  /* Bold Italic */
+  @font-face {
+    font-family: 'Hack';
+    src: url('../fonts/hack/Hack-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
 
 * {
     box-sizing: border-box;
