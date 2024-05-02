@@ -137,30 +137,6 @@ body header section nav .nav_links .current:hover{
     color: white !important;
 } */
 
-button {
-    background-color: rgba(0,0,45,1);
-    border: none;
-    cursor: pointer;
-    font-size: 11px;
-}
-
-button:hover {
-    /* background-color: rgba(0,0,45,0.8); */
-    color: skyblue;
-}
-
-
-body header .headerBottom .SignupButton {
-    position: absolute;
-    background-color: #ff6600;
-    top: 2px;
-    right: 10px;
-    width: 45px;
-    height: 30px;
-    text-decoration: underline;
-    color: black;
-    transition: all 0.3s ease 0s;
-}
 
 body main {
     width: 800px;
@@ -217,6 +193,7 @@ body main article pre {
     font-size: 12px;
     text-decoration:none;
     overflow:hidden;
+    text-wrap: wrap;
     -webkit-text-size-adjust:100%;
 }
 
@@ -290,4 +267,77 @@ body footer section a:link, footer a:visited {
   
 body footer a:link:hover, footer a:visited:hover {
     color: #ffffff; 
+}
+
+
+
+@media (max-width: 475px) {
+    body header {
+        width: 390px;
+    }
+
+    body header section.headerTop {
+        margin-top: 5px;
+    }
+    
+    body header section.headerTop .logo {
+        font-size: 6px; 
+    }
+
+    body header .headerBottom {
+        margin-bottom: 5px;
+    }
+
+    body header .headerBottom li, a, button{
+        font-size: 15px;
+    }
+    
+    body header section nav ul.nav_links li {
+        margin: 0px;
+    }
+
+    body header section nav ul.nav_links li a {
+        padding: 6px 10px 4px 10px;
+    }
+
+    body main {
+        width: 390px;
+    }
+
+    body main section p {
+        font-size: 7px;
+        letter-spacing: 4px;
+        width: 100%;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        text-align: center; 
+    }
+
+    body main section p.levelTitle {
+        font-size: medium;
+    }
+
+    body main article {
+        font-size: 10px;
+    }
+
+    body main article .articleHeader,
+    body main article .articleHeaderBottom {
+        padding:2px;
+        padding-left:4px;
+    }
+
+    body main article pre {
+        padding: 5px;
+        font-size: 11px;
+        padding-top:2px;
+    }
+
+    body footer {
+        width: 390px;
+    }
+    body footer section p span.text,
+    body footer section p a{
+        font-size: 9px;
+    }
 }

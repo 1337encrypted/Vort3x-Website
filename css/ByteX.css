@@ -220,6 +220,7 @@ body main article pre {
     font-size: 12px;
     text-decoration:none;
     overflow:hidden;
+    text-wrap: wrap;
     -webkit-text-size-adjust:100%;
 }
 
@@ -365,4 +366,96 @@ body footer section a:link, footer a:visited {
   
 body footer a:link:hover, footer a:visited:hover {
     color: #F08080; 
+}
+
+@media (max-width: 475px) {
+    body header {
+        width: 390px;
+    }
+
+    body header section.headerTop {
+        margin-top: 5px;
+    }
+    
+    body header section.headerTop .logo {
+        font-size: 6px; 
+    }
+
+    body header .headerBottom {
+        margin-bottom: 5px;
+    }
+
+    body header .headerBottom li, a, button{
+        font-size: 15px;
+    }
+    
+    body header section nav ul.nav_links li {
+        margin: 0px;
+    }
+
+    body header section nav ul.nav_links li a {
+        padding: 6px 10px 4px 10px;
+    }
+
+    body main {
+        width: 390px;
+    }
+
+    body main section p {
+        font-size: 7px;
+        letter-spacing: 4px;
+        width: 100%;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        text-align: center; 
+    }
+
+    body main section p.levelTitle {
+        font-size: medium;
+    }
+    
+    body main article {
+        font-size: 10px;
+    }
+
+    body main article pre code a,
+    body main article .articleHeader,
+    body main article .articleHeaderBottom {
+        font-size: 10px;
+        padding:2px;
+        padding-left:4px;
+    }
+    
+    h3,
+    #textBox {
+        font-size: 11px;
+        text-indent: 10px;
+    }
+    
+    body main article pre code h1.pageTitle {
+        font-size: medium;
+    }
+
+    body main article pre code li,
+    body main article pre code ul,
+    body main article pre {
+        padding: 5px;
+        font-size: 11px;
+        padding-top:2px;
+    }
+    
+    body footer {
+        width: 390px;
+    }
+    
+    body footer section p span.text,
+    body footer section p a{
+        font-size: 9px;
+    }
+
+    body main article table.level a,
+    body main article table.level{
+        font-size: small;
+    }
+
 }

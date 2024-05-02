@@ -17,7 +17,7 @@ var textContents = {
 
   'create new user': `
   <h1 class="center pageTitle">The linux filesystem</h1>
-  <span class="code">
+  <span class="linuxTree">
                                            / (root)
                                            ┃
     ┏━━━━┳━━━━┳━━━━┳━━━━━┳━━━━┳━━━━━┳━━━━━━╋━━━━━━┳━━━━┳━━━━━┳━━━━━┳━━━━┳━━━━━┳━━━━┳━━━━┳━━━━┓

@@ -8,8 +8,7 @@ var textContents = {
   <h1 class="center pageTitle">Challenge 0: SSH</h1>
   <h3>Assignment 0.0: Figure out the <span class="keyword">ip address</span> of your linux machine</h3>
   <span class="code">ip address</span>
-  <h3>Assignment 0.1: To verify if your ip address is correct run the file <a href="../scripts/verify_ip_address">verify_ip_address</a> 
-          and pass your ip address as the argument</h3>
+  <h3>Assignment 0.1: To verify if your ip address is correct run the file <a href="../scripts/verify_ip_address">verify_ip_address</a> and pass your ip address as the argument</h3>
   <span class="code">wget http://16.171.179.211/Vortex-Website/scripts/verify_ip_address</span>
   <li>Make the file executable before running it</li>
   <span class="code">chmod +x verify_ip_address</span>
