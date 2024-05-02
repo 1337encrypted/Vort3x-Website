@@ -220,10 +220,24 @@ body main pre code span.code {
     line-height: 1.5;
 }
 
+body main pre code span.redNote {
+    background-color: #f5f5f5;
+    border: 1px solid red;
+    display: block;
+    width: 100%;
+    padding: 1em;
+    line-height: 1.5;
+}
+
 body main article pre code li{
     font-size:small;
     line-height: 1.5;
     text-indent: 10px;
+}
+
+body main article pre code ul {
+    line-height: 2.5;
+    font-size: 12px;
 }
 
 body main article pre code p, #textBox p{

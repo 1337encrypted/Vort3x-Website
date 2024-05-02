@@ -223,7 +223,7 @@ body main article pre code span.code {
     border: 1px solid #ddd;
     display: block;
     padding: 1em;
-    line-height: 1.5;
+    /* line-height: 1.5; */
 }
 
 body main article pre code li{
