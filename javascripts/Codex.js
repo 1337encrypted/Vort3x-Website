@@ -4,17 +4,17 @@ var styleElement = document.createElement('style');
 document.head.appendChild(styleElement);
 // Object to store text contents and their corresponding IDs
 var textContents = {
-    '-0x00': ``,
-    '-0x01': ``,
-    '-0x02': ``,
-    '-0x03': ``,
-    '-0x04': ``,
-    '-0x05': ``,
-    '-0x06': ``,
-    '-0x07': ``,
-    '-0x08': ``,
-    '-0x09': ``,
-    '-0x0A': ``,
+    '-0x00': `<div class="container"></div>`,
+    '-0x01': `<div class="container"></div>`,
+    '-0x02': `<div class="container"></div>`,
+    '-0x03': `<div class="container"></div>`,
+    '-0x04': `<div class="container"></div>`,
+    '-0x05': `<div class="container"></div>`,
+    '-0x06': `<div class="container"></div>`,
+    '-0x07': `<div class="container"></div>`,
+    '-0x08': `<div class="container"></div>`,
+    '-0x09': `<div class="container"></div>`,
+    '-0x0A': `<div class="container"></div>`,
 };
 
 function displayText(contentId) {

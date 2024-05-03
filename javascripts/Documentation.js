@@ -5,6 +5,7 @@ document.head.appendChild(styleElement);
 // Object to store text contents and their corresponding IDs
 var textContents = {
   'ssh': `
+  <div class="container">
   <h1 class="center pageTitle">Secure Shell (SSH)</h1>
   <h3>1. Make sure that the systems are on the same network</h3>
   <h3>2. Figure out the ip-address of the remote machine</h3>
@@ -13,9 +14,11 @@ var textContents = {
   <span class="code">ssh &lt;username&gt;@&lt;ipaddres&gt;</span>
   <h3>Example</h3>
   <span class="code">ssh pi@ipaddress</span>
+  </div>
   `,
 
   'create new user': `
+  <div class="container">
   <h1 class="center pageTitle">The linux filesystem</h1>
   <span class="linuxTree">
                                            / (root)
@@ -45,9 +48,11 @@ var textContents = {
   <li>This will create the new user along with the users home directory</li>
   <h3>3. Login using the username</h3>
   <span class="code">su &lt;username&gt;</span>
+  </div>
   `,
 
   'command-line basics': `
+  <div class="container">
   <h1 class="center pageTitle">Shell basics</h1>
   <h3>Navigation commands</h3>
   <li><a href="#ls-section">ls</a> - list directory</li>
@@ -107,9 +112,10 @@ var textContents = {
   <h1 class="bold pageTitle" id="ls-section">ls</h1>
   <h3 class="bold">ls - List directory contents</h3>
   <span class="code">$ ls</span>
-  <span>Note:
-  Absolute Pathnames - An absolute pathname begins with the root director
-  Relative Pathnames - A relative pathname starts from the working directory</span>
+  <span>
+Note:
+Absolute Pathnames - An absolute pathname begins with the root director
+Relative Pathnames - A relative pathname starts from the working directory</span>
   <table>
     <thead>
       <tr>
@@ -122,8 +128,7 @@ var textContents = {
       <tr>
         <td>-a</td>
         <td>--all</td>
-        <td>List all files, even those with names that begin with a period, which are 
-normally not listed (that is, hidden).</td>
+        <td>List all files, even those with names that begin with a period, which are normally not listed (that is, hidden).</td>
       </tr>
       <tr>
         <td>-A</td>
@@ -133,8 +138,7 @@ normally not listed (that is, hidden).</td>
       <tr>
         <td>-d</td>
         <td>--directory</td>
-        <td>Use this option in conjunction with the -l option to see details about the 
-directory rather than its contents.</td>
+        <td>Use this option in conjunction with the -l option to see details about the directory rather than its contents.</td>
       </tr>
       <tr>
         <td>-l</td>
@@ -144,8 +148,7 @@ directory rather than its contents.</td>
       <tr>
         <td>-r</td>
         <td>--reverse</td>
-        <td>Display the results in reverse order. Normally, ls displays its results 
-in ascending alphabetical order</td>
+        <td>Display the results in reverse order. Normally, ls displays its results in ascending alphabetical order</td>
       </tr>
     </tbody>
   </table>
@@ -200,8 +203,7 @@ in ascending alphabetical order</td>
     <tbody>
       <tr>
         <td>cp file1 file2</td>
-        <td>Copy file1 to file2, <strong>if file2 exists it is overwritten with the contents of 
-file1.</strong> if it doesn't exist then it's created.</td>
+        <td>Copy file1 to file2, <strong>if file2 exists it is overwritten with the contents of file1.</strong> if it doesn't exist then it's created.</td>
       </tr>
       <tr>
         <td>cp -i file1 file2</td>
@@ -209,18 +211,15 @@ file1.</strong> if it doesn't exist then it's created.</td>
       </tr>
       <tr>
         <td>cp file1 file2 dir1</td>
-        <td>Copy file1 and file2 into directory dir1. The directory dir1 must already
-exist.</td>
+        <td>Copy file1 and file2 into directory dir1. The directory dir1 must already exist.</td>
       </tr>
       <tr>
         <td>cp dir1/* dir2</td>
-        <td>Copy all the contents of directory dir1 into directory dir2, only if directory
-dir2 exists.</td>
+        <td>Copy all the contents of directory dir1 into directory dir2, only if directory dir2 exists.</td>
       </tr>
       <tr>
         <td>cp -r dir1 dir2</td>
-        <td>Copy all the contents of dir1 recursively into dir2. If dir2 doesn't exist, 
-then create it and copy the files.</td>
+        <td>Copy all the contents of dir1 recursively into dir2. If dir2 doesn't exist, then create it and copy the files.</td>
       </tr>
     </tbody>
   </table>
@@ -248,25 +247,19 @@ then create it and copy the files.</td>
     <tbody>
       <tr>
         <td>mv file1 file2</td>
-        <td>Move file1 to file2. If file2 exists, it is overwritten with the contents of 
-file1. If file2 does not exist, it is created. In either case, file1 ceases
-to exist.</td>
+        <td>Move file1 to file2. If file2 exists, it is overwritten with the contents of file1. If file2 does not exist, it is created. In either case, file1 ceases to exist.</td>
       </tr>
       <tr>
         <td>mv -i file1 file2</td>
-        <td>Same as the previous command, except that if file2 exists, the user is
-prompted before it is overwritten.</td>
+        <td>Same as the previous command, except that if file2 exists, the user is prompted before it is overwritten.</td>
       </tr>
       <tr>
         <td>mv file1 file2 dir1</td>
-        <td>Move file1 and file2 into directory dir1. The directory dir1 must already
-exist</td>
+        <td>Move file1 and file2 into directory dir1. The directory dir1 must already exist</td>
       </tr>
       <tr>
         <td>mv dir1 dir2</td>
-        <td>If directory dir2 does not exist, create directory dir2 and move the contents
-of directory dir1 into dir2 and delete directory dir1. If directory dir2 does
-exist, move directory dir1 (and its contents) into directory dir2.</td>
+        <td>If directory dir2 does not exist, create directory dir2 and move the contents of directory dir1 into dir2 and delete directory dir1. If directory dir2 does exist, move directory dir1 (and its contents) into directory dir2.</td>
       </tr>
     </tbody>
   </table>
@@ -288,15 +281,12 @@ exist, move directory dir1 (and its contents) into directory dir2.</td>
       <tr>
         <td>-r</td>
         <td>--recursive</td>
-        <td>Recursively delete directories. This means that if a directory being deleted
-has subdirectories, delete them too. To delete a directory, this option must
-be specified.</td>
+        <td>Recursively delete directories. This means that if a directory being deleted has subdirectories, delete them too. To delete a directory, this option must be specified.</td>
       </tr>
       <tr>
         <td>-f</td>
         <td>--force</td>
-        <td>Ignore nonexistent files and do not prompt. 
-This overrides the --interactive option.</td>
+        <td>Ignore nonexistent files and do not prompt. This overrides the --interactive option.</td>
       </tr>
     </tbody>
   </table>
@@ -320,8 +310,7 @@ This overrides the --interactive option.</td>
       </tr>
       <tr>
         <td>rm -rf file1 dir1</td>
-        <td>Same as the previous command, except that if either file1 or dir1 do not exist, 
-rm will continue silently.</td>
+        <td>Same as the previous command, except that if either file1 or dir1 do not exist, rm will continue silently.</td>
       </tr>
     </tbody>
   </table>
@@ -352,10 +341,11 @@ rm will continue silently.</td>
   <h3 class="bold">cat - prints the contents of the file on the terminal</h3>
   <span class="code">$ cat &lt;sometext.txt&gt;
   Some text in this file.</span>
-
+  </div>
   `,
 
   'arduino-cli': `
+  <div class="container">
   <h1 class="center pageTitle">arduino-cli</h1>
   <li>Installation of <strong>arduino-cli</strong> software for the arduino UNO bloard</li>
   <h3>Download the script by clicking <a href='../scripts/install_arduino_cli.sh'>here</a> or use wget to install it.</h3>
@@ -369,66 +359,95 @@ rm will continue silently.</td>
   <span class="code">Port         Protocol Type              Board Name  FQBN            Core
 /dev/ttyACM0 serial   Serial Port (USB) Arduino Uno arduino:avr:uno arduino:avr</span>
   <li>Here <span class='keyword'>/dev/ttyACM0</span> is the port number, you must remember this to upload you code next time.</li>
+  </div>
   `,
   
   'setup ssh keys': `
+  <div class="container">
   <h1 class="center pageTitle">Generate SSH Keys</h1>
   <h3>Generate the ppublic and private keys for github</h3>
   <span class="code">ssh-keygen -t ed25519 -C "your_email@example.com"</span>
   <h3>Copy the public key and copy it over to github</h3>
   <span class="code">cat ~/.ssh/id_rsa.pub</span>
+  </div>
   `,
   
   'git basics': `
+  <div class="container">
   <h1 class="center pageTitle">git-basics</h1>
+  </div>
   `,
   
   'pin numbers': `
+  <div class="container">
   <h1 class="center pageTitle">pin-numbers</h1>
+  </div>
   `,
   
   'led': `
+  <div class="container">
   <h1 class="center pageTitle">led</h1>
+  </div>
   `,
 
   'resistors': `
+  <div class="container">
   <h1 class="center pageTitle">resistors</h1>
+  </div>
   `,
 
   'state machines': `
+  <div class="container">
   <h1 class="center pageTitle">state-machines</h1>
+  </div>
   `,
 
   'bluetooth': `
+  <div class="container">
   <h1 class="center pageTitle">bluetooth</h1>
+  <div>
   `,
   
   'class': `
+  <div class="container">
   <h1 class="center pageTitle">class</h1>
+  </div>
   `,
   
   'object': `
+  <div class="container">
   <h1 class="center pageTitle">object</h1>
+  </div>
   `,
 
   'buzzer': `
+  <div class="container">
   <h1 class="center pageTitle">buzzer</h1>
+  </div>
   `,
   
   'pushbutton': `
+  <div class="container">
   <h1 class="center pageTitle">pushbutton</h1>
+  </div>
   `,
   
   '7 segment display': `
+  <div class="container">
   <h1 class="center pageTitle">7-segment-display</h1>
+  </div>
   `,
   
   'keypad': `
+  <div class="container">
   <h1 class="center pageTitle">4x4-keypad</h1>
+  </div>
   `,
 
   'lcd': `
+  <div class="container">
   <h1 class="center pageTitle">lcd-16x2</h1>
+  </div>
   `,
   
 };

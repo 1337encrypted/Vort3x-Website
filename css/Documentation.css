@@ -223,6 +223,7 @@ body main article pre code img{
     margin-left: 10px;
     margin-right: 10px;
     width: calc(100% - 20px);
+    /* border: 1px solid red; */
 }
 
 .center {
@@ -247,7 +248,7 @@ body main article pre code span.code {
 body main article pre code li{
     font-size: small;
     line-height: 1.5;
-    text-indent: 10px;
+    text-align: start;
 }
 
 body main article pre code p, #textBox p{
@@ -354,7 +355,110 @@ body footer a:link:hover, footer a:visited:hover {
 
 
 
-@media (max-width: 475px) {
+@media (max-width: 805px) {
+    body header {
+        width: 600px;
+    }
+
+    body header section.headerTop {
+        margin-top: 5px;
+    }
+    
+    body header section.headerTop .logo {
+        font-size: 10px; 
+    }
+
+    body header .headerBottom {
+        margin-bottom: 5px;
+    }
+
+    body header .headerBottom li, a, button{
+        font-size: 20px;
+    }
+    
+    body header section nav ul.nav_links li {
+        margin: 10px, 10px;
+    }
+
+    body header section nav ul.nav_links li a {
+        padding: 4px 10px 4px 10px;
+    }
+
+    body main {
+        width: 600px;
+    }
+
+    body main section p {
+        font-size: 7px;
+        letter-spacing: 4px;
+        width: 100%;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        text-align: center; 
+    }
+
+    body main section p.levelTitle {
+        font-size: large;
+    }
+
+    body main article{
+    font-size: small;
+    }
+
+    #textBox,
+    body main article pre code a,
+    body main article .articleHeader,
+    body main article .articleHeaderBottom {
+        font-size: 10px;
+        padding:2px;
+        padding-left:4px;
+    }
+
+    body main article pre code h1.pageTitle {
+        font-size: medium;
+        /* text-indent: 10px; */
+    }
+    
+    h3 {
+        font-size: small;
+        /* text-indent: 10px; */
+    }
+
+    body main article pre {
+        padding: 2px;
+        font-size: 10px;
+    }
+
+    body main article pre code span.code,
+    body main article pre code li{
+        font-size: x-small;
+    }
+
+    body footer {
+        width: 600px;
+    }
+
+    body footer section p span.text,
+    body footer section p a{
+        font-size: 9px;
+    }
+
+    body main article table.level a,
+    body main article table.level{
+        font-size: small;
+    }
+
+    .linuxTree {
+        font-size: 9px;
+    }
+}
+
+
+
+
+
+
+@media (max-width: 600px) {
     body header {
         width: 390px;
     }
@@ -415,12 +519,12 @@ body footer a:link:hover, footer a:visited:hover {
 
     body main article pre code h1.pageTitle {
         font-size: medium;
-        text-indent: 10px;
+        /* text-indent: 10px; */
     }
     
     h3 {
-        font-size: small;
-        text-indent: 10px;
+        font-size: x-small;
+        /* text-indent: 10px; */
     }
 
     body main article pre {
@@ -448,6 +552,37 @@ body footer a:link:hover, footer a:visited:hover {
     }
 
     .linuxTree {
-        font-size: 6px;
+        font-size: 5px;
+    }
+}
+
+
+
+@media (max-width: 390px) {
+    body header,
+    body main,
+    body footer {
+    width: 360px;
+    }
+
+    #textBox,
+    body main article pre code a,
+    body main article .articleHeader,
+    body main article .articleHeaderBottom {
+        font-size: 9px;
+        padding:2px;
+        padding-left:4px;
+    }
+    
+    body main article pre code h1.pageTitle {
+        font-size: small;
+    }
+
+    h3 {
+        font-size: 10px;
+    }
+
+    .linuxTree {
+        font-size: 5px;
     }
 }

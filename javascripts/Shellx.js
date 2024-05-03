@@ -10,7 +10,8 @@ var styleElement = document.createElement('style');
 document.head.appendChild(styleElement);
 // Object to store text contents and their corresponding IDs
 var textContents = {
-'-0x00':`
+'0x00':`
+<div class="container">
 The objective of this stage is to access the game via SSH.
 You should connect to the host whose IP is displayed on the LCD screen on the IOT evaluation board.
 
@@ -21,17 +22,23 @@ Password: <strong>shell00</strong>
 After successfully logging in, visit the 1 section to learn how to progress to the next level.
 
 <h3>Commands you may need to solve this level</h3>
-<a href="https://www.youtube.com/watch?v=_3M7Y0iC7PE" target="_blank">ssh</a>`,
+<a href="https://www.youtube.com/watch?v=_3M7Y0iC7PE" target="_blank">ssh</a>
+</div>
+`,
 
-'-0x01':`
+'0x01':`
+<div class="container">
 The passphrase for accessing the subsequent stage can be found within a document named <strong>readme</strong>
 in the main folder.
-Utilize this passphrase for accessing -0x02 via SSH.
+Utilize this passphrase for accessing 0x02 via SSH.
 
 <h3>Commands potentially useful for navigating this stage include</h3>
-<a href="https://www.geeksforgeeks.org/ls-command-in-linux/">ls</a>, <a href="https://www.geeksforgeeks.org/cd-command-in-linux-with-examples/">cd</a>, <a href="https://www.geeksforgeeks.org/cat-command-in-linux-with-examples/">cat</a>, <a href="https://www.geeksforgeeks.org/file-command-in-linux-with-examples/">file</a>, <a href="https://www.geeksforgeeks.org/du-command-linux/">du</a>, <a href="https://www.geeksforgeeks.org/find-command-in-linux-with-examples/">find</a>`,
+<a href="https://www.geeksforgeeks.org/ls-command-in-linux/">ls</a>, <a href="https://www.geeksforgeeks.org/cd-command-in-linux-with-examples/">cd</a>, <a href="https://www.geeksforgeeks.org/cat-command-in-linux-with-examples/">cat</a>, <a href="https://www.geeksforgeeks.org/file-command-in-linux-with-examples/">file</a>, <a href="https://www.geeksforgeeks.org/du-command-linux/">du</a>, <a href="https://www.geeksforgeeks.org/find-command-in-linux-with-examples/">find</a>
+</div>
+`,
 
-'-0x02':`
+'0x02':`
+<div class="container">
 The passphrase for advancing to the subsequent can be found within a document named <strong>"-"</strong>
 located in the main directory.
 
@@ -39,24 +46,33 @@ located in the main directory.
 <a href="https://www.geeksforgeeks.org/ls-command-in-linux/">ls</a>, <a href="https://www.geeksforgeeks.org/cd-command-in-linux-with-examples/">cd</a>, <a href="https://www.geeksforgeeks.org/cat-command-in-linux-with-examples/">cat</a>, <a href="https://www.geeksforgeeks.org/file-command-in-linux-with-examples/">file</a>, <a href="https://www.geeksforgeeks.org/du-command-linux/">du</a>, <a href="https://www.geeksforgeeks.org/find-command-in-linux-with-examples/">find</a>.
 
 
-<p id=hint>Hint: Perform a Google search for "dashed filename".</p>`,
+<p id=hint>Hint: Perform a Google search for "dashed filename".</p>
+</div>
+`,
 
-'-0x03':`
+'0x03':`
+<div class="container">
 The passphrase for accessing the next can be found within a hidden file within the <strong>inhere</strong> directory.
 
 <h3>Commands potentially useful for navigating this stage include</h3>
-<a href="https://www.geeksforgeeks.org/ls-command-in-linux/">ls</a>, <a href="https://www.geeksforgeeks.org/cd-command-in-linux-with-examples/">cd</a>, <a href="https://www.geeksforgeeks.org/cat-command-in-linux-with-examples/">cat</a>, <a href="https://www.geeksforgeeks.org/file-command-in-linux-with-examples/">file</a>, <a href="https://www.geeksforgeeks.org/du-command-linux/">du</a>, <a href="https://www.geeksforgeeks.org/find-command-in-linux-with-examples/">find</a>.`,
+<a href="https://www.geeksforgeeks.org/ls-command-in-linux/">ls</a>, <a href="https://www.geeksforgeeks.org/cd-command-in-linux-with-examples/">cd</a>, <a href="https://www.geeksforgeeks.org/cat-command-in-linux-with-examples/">cat</a>, <a href="https://www.geeksforgeeks.org/file-command-in-linux-with-examples/">file</a>, <a href="https://www.geeksforgeeks.org/du-command-linux/">du</a>, <a href="https://www.geeksforgeeks.org/find-command-in-linux-with-examples/">find</a>.
+</div>
+`,
 
-'-0x04':`
+'0x04':`
+<div class="container">
 The passphrase for advancing to the subsequent is located in the sole file that is readable by
 humans within the <strong>inhere</strong> directory.
 
 <h3>Commands that might be beneficial for completing this include</h3>
 <a href="https://www.geeksforgeeks.org/ls-command-in-linux/">ls</a> ,<a href="https://www.geeksforgeeks.org/cd-command-in-linux-with-examples/">cd</a> ,<a href="https://www.geeksforgeeks.org/cat-command-in-linux-with-examples/">cat</a> ,<a href="https://www.geeksforgeeks.org/file-command-in-linux-with-examples/">file</a> ,<a href="https://www.geeksforgeeks.org/du-command-linux/">du</a> ,<a href="https://www.geeksforgeeks.org/find-command-in-linux-with-examples/">find</a>.
 
-<p id=hint>Hint: should your terminal display errors, consider using the "reset" command.</p>`,
+<p id=hint>Hint: should your terminal display errors, consider using the "reset" command.</p>
+</div>
+`,
 
-'-0x05':`
+'0x05':`
+<div class="container">
 The passphrase for progressing to the next can be found in a file within the <strong>inhere</strong> directory
 that possesses the following characteristics:
 - Readable by humans
@@ -64,27 +80,35 @@ that possesses the following characteristics:
 - Not set as executable
 
 <h3>Commands that might be beneficial for completing this include</h3>
-<a href="https://www.geeksforgeeks.org/ls-command-in-linux/">ls</a> ,<a href="https://www.geeksforgeeks.org/cd-command-in-linux-with-examples/">cd</a> ,<a href="https://www.geeksforgeeks.org/cat-command-in-linux-with-examples/">cat</a> ,<a href="https://www.geeksforgeeks.org/file-command-in-linux-with-examples/">file</a>, <a href="https://www.geeksforgeeks.org/du-command-linux/">du</a>, <a href="https://www.geeksforgeeks.org/find-command-in-linux-with-examples/">find</a>.`,
+<a href="https://www.geeksforgeeks.org/ls-command-in-linux/">ls</a> ,<a href="https://www.geeksforgeeks.org/cd-command-in-linux-with-examples/">cd</a> ,<a href="https://www.geeksforgeeks.org/cat-command-in-linux-with-examples/">cat</a> ,<a href="https://www.geeksforgeeks.org/file-command-in-linux-with-examples/">file</a>, <a href="https://www.geeksforgeeks.org/du-command-linux/">du</a>, <a href="https://www.geeksforgeeks.org/find-command-in-linux-with-examples/">find</a>.
+</div>
+`,
 
-'-0x06': `
+'0x06': `
+<div class="container">
 The passphrase for accessing the subsequent is located somewhere on the server and meets the 
 following criteria:
 - Owned by user shell07
-- Belongs to group Level-0x05
+- Belongs to group Level0x05
 - Size of 33 bytes
 
 <h3>Commands that might be beneficial for completing this include</h3>
-<a href="https://www.geeksforgeeks.org/ls-command-in-linux/">ls</a> ,<a href="https://www.geeksforgeeks.org/cd-command-in-linux-with-examples/">cd</a> ,<a href="https://www.geeksforgeeks.org/cat-command-in-linux-with-examples/">cat</a> ,<a href="https://www.geeksforgeeks.org/file-command-in-linux-with-examples/">file</a>, <a href="https://www.geeksforgeeks.org/du-command-linux/">du</a>, <a href="https://www.geeksforgeeks.org/find-command-in-linux-with-examples/">find</a>, <a href="https://www.geeksforgeeks.org/grep-command-in-unixlinux/">grep</a>.`,
+<a href="https://www.geeksforgeeks.org/ls-command-in-linux/">ls</a> ,<a href="https://www.geeksforgeeks.org/cd-command-in-linux-with-examples/">cd</a> ,<a href="https://www.geeksforgeeks.org/cat-command-in-linux-with-examples/">cat</a> ,<a href="https://www.geeksforgeeks.org/file-command-in-linux-with-examples/">file</a>, <a href="https://www.geeksforgeeks.org/du-command-linux/">du</a>, <a href="https://www.geeksforgeeks.org/find-command-in-linux-with-examples/">find</a>, <a href="https://www.geeksforgeeks.org/grep-command-in-unixlinux/">grep</a>.
+</div>
+`,
 
-'-0x07':`
+'0x07':`
+<div class="container">
 The passphrase for advancing to the next is located in the file data.txt next to the term <strong>millionth</strong>
 
 <h3>Commands that might be useful for solving this include:</h3>
-<a href="https://www.geeksforgeeks.org/man-command-in-linux-with-examples/">man</a> ,<a href="https://www.geeksforgeeks.org/grep-command-in-unixlinux/">grep</a> ,<a href="https://www.geeksforgeeks.org/sort-command-linuxunix-examples/">sort</a>, <a href="https://www.geeksforgeeks.org/uniq-command-in-linux-with-examples-2/">uniq</a>, <a href="https://www.geeksforgeeks.org/string-manipulation-in-shell-scripting/">strings</a>, <a href="https://www.geeksforgeeks.org/convert-text-file-strings-into-base64-encoding/">base64</a>, <a href="#">tr</a> , tar, gzip, bzip2, xxd.`,
+<a href="https://www.geeksforgeeks.org/man-command-in-linux-with-examples/">man</a> ,<a href="https://www.geeksforgeeks.org/grep-command-in-unixlinux/">grep</a> ,<a href="https://www.geeksforgeeks.org/sort-command-linuxunix-examples/">sort</a>, <a href="https://www.geeksforgeeks.org/uniq-command-in-linux-with-examples-2/">uniq</a>, <a href="https://www.geeksforgeeks.org/string-manipulation-in-shell-scripting/">strings</a>, <a href="https://www.geeksforgeeks.org/convert-text-file-strings-into-base64-encoding/">base64</a>, <a href="#">tr</a> , <a href="#">tar</a>, <a href="#">gzip</a>, <a href="#">bzip2</a>, <a href="#">xxd</a>.
+</div>
+`,
 
-'-0x08': '',
-'-0x09': '',
-'-0x0A': '',
+'0x08': '<div class="container"></div>',
+'0x09': '<div class="container"></div>',
+'0x0A': '<div class="container"></div>',
 };
 
 

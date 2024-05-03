@@ -271,7 +271,71 @@ body footer a:link:hover, footer a:visited:hover {
 
 
 
-@media (max-width: 475px) {
+
+
+
+
+@media (max-width: 805px) {
+    body header {
+        width: 600px;
+    }
+
+    body header section.headerTop {
+        margin-top: 5px;
+    }
+    
+    body header section.headerTop .logo {
+        font-size: 10px; 
+    }
+
+    body header .headerBottom {
+        margin-bottom: 5px;
+    }
+
+    body header .headerBottom li, a, button{
+        font-size: 20px;
+    }
+    
+    body header section nav ul.nav_links li {
+        margin: 10px, 10px;
+    }
+    
+    body header section nav ul.nav_links li a {
+        padding: 4px 10px 4px 10px;
+    }
+
+    body main {
+        width: 600px;
+    }
+
+    body main section p {
+        font-size: 7px;
+        letter-spacing: 4px;
+        width: 100%;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        text-align: center; 
+    }
+
+    body main section p.levelTitle {
+        font-size: large;
+    }
+
+    body main article,
+    body main article pre {
+        font-size: 11px;
+    }
+
+    body footer {
+        width: 600px;
+    }
+}
+
+
+
+
+
+@media (max-width: 600px) {
     body header {
         width: 390px;
     }
@@ -341,3 +405,14 @@ body footer a:link:hover, footer a:visited:hover {
         font-size: 9px;
     }
 }
+
+
+@media (max-width: 390px) {
+    body header,
+    body main,
+    body footer {
+    width: 360px;
+    }
+}
+
+
