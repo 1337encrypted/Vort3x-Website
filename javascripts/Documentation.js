@@ -7,9 +7,15 @@ var textContents = {
   'ssh': `
   <div class="container">
   <h1 class="center pageTitle">Secure Shell (SSH)</h1>
-  <h3>1. Make sure that the systems are on the same network</h3>
-  <h3>2. Figure out the ip-address of the remote machine</h3>
-  <span class="code">ip addr</span>
+  <h3>Make sure that the systems are on the same network, either LAN or hotspot</h3>
+  <h3>Figure out the ip-address of the remote machine</h3>
+  <span class="code">ip address</span>
+  <h3>To verify if your ip address is correct run the file <a href="../scripts/verify_ip_address">verify_ip_address</a> and pass your ip address as the argument</h3>
+  <span class="code">wget http://16.171.179.211/Vortex-Website/scripts/verify_ip_address</span>
+  <li>Make the file executable before running it</li>
+  <span class="code">chmod +x verify_ip_address</span>
+  <li>Run the file with the ip address as the argument</li>
+  <span class="code">./verify_ip_address &lt;ip_address&gt;</span>
   <h3>3. Connect to the remote machine using the syntax</h3>
   <span class="code">ssh &lt;username&gt;@&lt;ipaddres&gt;</span>
   <h3>Example</h3>
@@ -28,9 +34,9 @@ var textContents = {
    bin  boot dev  etc  home  lib  lib64  media   mnt  opt   proc  root run  sbin  srv  sys  tmp
     ┃                    ┃
    usr                   ┃
-    ┃                    ┣━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┓
-   bin                   ┃                 ┃                 ┃                  ┃               ┃ 
-                        pi               user1             user2              user3           user4   
+    ┃                    ┣━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┓
+   bin                   ┃                 ┃                 ┃                  ┃              ┃ 
+                        pi               user1             user2              user3          user4   
                          ┃      
             ┏━━━━━━━━━━━━╋━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━┓
             ┃            ┃            ┃            ┃            ┃ 
@@ -359,13 +365,15 @@ Relative Pathnames - A relative pathname starts from the working directory</span
   <span class="code">Port         Protocol Type              Board Name  FQBN            Core
 /dev/ttyACM0 serial   Serial Port (USB) Arduino Uno arduino:avr:uno arduino:avr</span>
   <li>Here <span class='keyword'>/dev/ttyACM0</span> is the port number, you must remember this to upload you code next time.</li>
+  <h3>verify arduino-cli</h3>
+  <span class="code">which arduino-cli</span><li>it should return <strong>/bin/arduino-cli</strong></li>
   </div>
   `,
   
   'setup ssh keys': `
   <div class="container">
   <h1 class="center pageTitle">Generate SSH Keys</h1>
-  <h3>Generate the ppublic and private keys for github</h3>
+  <h3>Generate the public and private keys for github</h3>
   <span class="code">ssh-keygen -t ed25519 -C "your_email@example.com"</span>
   <h3>Copy the public key and copy it over to github</h3>
   <span class="code">cat ~/.ssh/id_rsa.pub</span>
@@ -387,12 +395,213 @@ Relative Pathnames - A relative pathname starts from the working directory</span
   'led': `
   <div class="container">
   <h1 class="center pageTitle">led</h1>
+  <span class="note">
+  <strong>pinMode(pin, INPUT/OUTPUT/INPUT_PULLUP);</strong>
+  
+  INPUT - 0
+  OUTPUT - 1
+  INPUT_PULLUP - 2
+
+  <strong>digitalWrite(pin, LOW/HIGH);</strong>
+
+  LOW - 0
+  HIGH - 1</span>
+  <h3>Led part 1: led.ino</h3>
+  <span class="code">
+  void setup() 
+  {
+    pinMode(2, OUTPUT);
+  }
+
+  void loop() 
+  {
+    digitalWrite(2, HIGH);
+  }
+  </span>
+  <h3>Led part 2: Blink.ino</h3>
+  <span class="code">
+  constexpr int8_t ledPin = 2;
+  void setup() {
+    pinMode(ledPin, OUTPUT);
+  }
+
+  void loop() {
+    digitalWrite(ledPin, HIGH);
+    delay(1000);
+    digitalWrite(ledPin, LOW);
+    delay(1000);
+  }
+  </span>
+  <h3>Led part 3: SOS.ino</h3>
+  <span class="code">
+  constexpr int8_t ledPin = 2;
+  void setup() 
+  {
+    pinMode(ledPin, OUTPUT);
+  }
+
+  void loop() 
+  {
+    digitalWrite(ledPin,HIGH);
+    delay(500);
+    digitalWrite(ledPin,LOW);
+    delay(500);
+    digitalWrite(ledPin,HIGH);
+    delay(500);
+    digitalWrite(ledPin,LOW);
+    delay(500);
+    digitalWrite(ledPin,HIGH);
+    delay(500);
+    digitalWrite(ledPin,LOW);
+    delay(500);
+
+
+    digitalWrite(ledPin,HIGH);
+    delay(1000);
+    digitalWrite(ledPin,LOW);
+    delay(1000);
+    digitalWrite(ledPin,HIGH);
+    delay(1000);
+    digitalWrite(ledPin,LOW);
+    delay(1000);
+    digitalWrite(ledPin,HIGH);
+    delay(1000);
+    digitalWrite(ledPin,LOW);
+    delay(1000);
+
+
+    digitalWrite(ledPin,HIGH);
+    delay(500);
+    digitalWrite(ledPin,LOW);
+    delay(500);
+    digitalWrite(ledPin,HIGH);
+    delay(500);
+    digitalWrite(ledPin,LOW);
+    delay(500);
+    digitalWrite(ledPin,HIGH);
+    delay(500);
+    digitalWrite(ledPin,LOW);
+    delay(500);
+  }
+  </span>
+
+  <h3>Led part 4: control_brightness.ino</h3>
+  <span class="code">
+  int ledPin = 2;
+  void setup() 
+  {
+    pinMode(ledPin, OUTPUT);
+  }
+
+  void loop() 
+  {
+    analogWrite(ledPin,127);    //Control the brightness at 50% dutycycle
+  }
+  </span>
   </div>
   `,
 
-  'resistors': `
+  'datatypes': `
   <div class="container">
-  <h1 class="center pageTitle">resistors</h1>
+  <h1 class="center pageTitle">data types</h1>
+  <table border="1">
+    <tr>
+      <th style="width: 90px;">Data Type</th>
+      <th style="width: 120px;">Alias</th>
+      <th style="width: 105px;">Size (bytes)</th>
+      <th>Lower Limit</th>
+      <th>Upper Limit</th>
+    </tr>
+    <tr>
+      <td>uint8_t</td>
+      <td>unsigned char</td>
+      <td>1</td>
+      <td>0</td>
+      <td>255</td>
+    </tr>
+    <tr>
+      <td>int8_t</td>
+      <td>char</td>
+      <td>1</td>
+      <td>-128</td>
+      <td>127</td>
+    </tr>
+    <tr>
+      <td>uint16_t</td>
+      <td>unsigned int</td>
+      <td>2</td>
+      <td>0</td>
+      <td>65,535</td>
+    </tr>
+    <tr>
+      <td>int16_t</td>
+      <td>int</td>
+      <td>2</td>
+      <td>-32,768</td>
+      <td>32,767</td>
+    </tr>
+    <tr>
+      <td>uint32_t</td>
+      <td>unsigned long</td>
+      <td>4</td>
+      <td>0</td>
+      <td>4,294,967,295</td>
+    </tr>
+    <tr>
+      <td>int32_t</td>
+      <td>long</td>
+      <td>4</td>
+      <td>-2,147,483,648</td>
+      <td>2,147,483,647</td>
+    </tr>
+    <tr>
+      <td>bool</td>
+      <td>boolean</td>
+      <td>1</td>
+      <td>false (0)</td>
+      <td>true (1)</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td>-</td>
+      <td>4</td>
+      <td>-3.4028235E+38</td>
+      <td>3.4028235E+38</td>
+    </tr>
+    <tr>
+      <td>double</td>
+      <td>-</td>
+      <td>8</td>
+      <td>-1.7976931348623157E+308</td>
+      <td>1.7976931348623157E+308</td>
+    </tr>
+  </table>
+  </div>
+  `,
+
+  'lock-serial': `
+  <div class="container">
+  <h1 class="center pageTitle">Serial communication</h1>
+  <h3>Serial part 1: serial.ino</h3>
+  <span class="code">
+  void setup() {
+    // Serial.begin(9600);
+  
+    while (!Serial) {
+      
+    }; // wait for serial port to connect.
+  
+    Serial.print("USB connected");
+  }
+  
+  void loop() {}
+  </span>
+
+  <h3>Serial part 2:</h3>
+  <span class="code">
+  
+  </span>
+
   </div>
   `,
 
@@ -402,9 +611,22 @@ Relative Pathnames - A relative pathname starts from the working directory</span
   </div>
   `,
 
-  'bluetooth': `
+  'lock-bluetooth': `
   <div class="container">
   <h1 class="center pageTitle">bluetooth</h1>
+  <h3>Bluetooth part 1: ble.ino</h3>
+  <span class="code">
+  void setup() {
+    Serial.begin(9600);
+  }
+  
+  void loop() {
+    if(Serial.available()){
+      char receiveData = Serial.read();
+      Serial.println(receiveData);
+    }
+  }
+  </span>
   <div>
   `,
   
