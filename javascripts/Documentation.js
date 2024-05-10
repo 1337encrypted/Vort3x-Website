@@ -417,7 +417,7 @@ git config user.email "email@example.com"</span>
   <h3>cat the public key file</h3>
   <span class="code">cat ~/.ssh/ed25519.pub</span>
   <h3>Copy the public key to the clipboard</h3>
-  <span class="code">ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIsvjnY3w5Yqgi2esTF1IUc10O6/1PrulvCzVH8d2ki7 your_email@example.com</span>
+  <span class="code">ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIsvjnY3w5Yqgi2esTF1IUc10O6/ 1PrulvCzVH8d2ki7 your_email@example.com</span>
 
   <h3 id="git-step3">Step 3. Add the key to github</h3>
   <img src="../images/github1.png" alt="">
