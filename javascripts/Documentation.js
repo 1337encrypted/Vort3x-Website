@@ -60,21 +60,22 @@ var textContents = {
   'command-line basics': `
   <div class="container">
   <h1 class="center pageTitle">Shell basics</h1>
-  <h3>Navigation commands</h3>
-  <li><a href="#ls-section">ls</a> - list directory</li>
-  <li><a href="#cd-section">cd</a> - change directory</li>
-  <li><a href="#pwd-section">pwd</a> - print working directory</li>
-  <h3>Manuplating files and directories</h3>
-  <li><a href="#touch-section">touch</a> - create a new file</li>
-  <li><a href="#mkdir-section">mkdir</a> - make a new directory</li>
-  <li><a href="#cp-section">cp</a> - copy files or directories</li>
-  <li><a href="#mv-section">mv</a> - move or rename file and directories</li>
-  <li><a href="#rm-section">rm</a> - delete files or directories</li>
-  <li><a href="#rmdir-section">rmdir</a> - remove a empty directory</li>
-  <h3>Interacting with shell</h3>
-  <li><a href="#clear-section">clear</a> - clears the terminal</li>
-  <li><a href="#cat-section">cat</a> - outputs contents of a file to the terminal</li>
-
+  <div class="vertical-menu">
+  <a class="vertical-menu-header">Navigation commands</a>
+  <a href="#ls-section">🢡 ls - list directory</a>
+  <a href="#cd-section">🢡 cd - change directory</a>
+  <a href="#pwd-section">🢡 pwd - print working directory</a>
+  <a class="vertical-menu-header">Manuplating files and directories</a>
+  <a href="#touch-section">🢡 touch - create a new file</a>
+  <a href="#mkdir-section">🢡 mkdir - make a new directory</a>
+  <a href="#cp-section">🢡 cp - copy files or directories</a>
+  <a href="#mv-section">🢡 mv - move or rename file and directories</a>
+  <a href="#rm-section">🢡 rm - delete files or directories</a>
+  <a href="#rmdir-section">🢡 rmdir - remove a empty directory</a>
+  <a class="vertical-menu-header">Interacting with shell</a>
+  <a href="#clear-section">🢡 clear - clears the terminal</a>
+  <a href="#cat-section">🢡 cat - outputs contents of a file to the terminal</a>
+  </div>
 
   <hr>
 
@@ -370,19 +371,88 @@ Relative Pathnames - A relative pathname starts from the working directory</span
   </div>
   `,
   
-  'setup ssh keys': `
-  <div class="container">
-  <h1 class="center pageTitle">Generate SSH Keys</h1>
-  <h3>Generate the public and private keys for github</h3>
-  <span class="code">ssh-keygen -t ed25519 -C "your_email@example.com"</span>
-  <h3>Copy the public key and copy it over to github</h3>
-  <span class="code">cat ~/.ssh/id_rsa.pub</span>
-  </div>
-  `,
-  
   'git basics': `
   <div class="container">
+
   <h1 class="center pageTitle">git-basics</h1>
+  <span class="text">
+The whole git routine can be split into 2 main componenets. Its the same routine for Windows, Mac and Linux, but except for the key generation part.
+  </span>
+
+  <span class="text">1. Setting the user account and generating keys</span>
+  <span class="text">2. check the status, add, commit, push and repeat</span>
+  <div class="vertical-menu">
+  <h3 class="center">CONTENTS</h3>
+  <a href="#git-setup" class="vertical-menu-header"></a>
+  <a href="#git-ssh-1">🢡 Setting the user account and generating keys</a>
+  <a href="#git-ssh-2">🢡 Check the status, add, commit, push and repeat</a>
+  </div>
+  
+  <h2 id="windows-git-ssh-1" class="center pageTitle">1. Setting the user account and generating keys</h2>
+  
+  <h3>Step 1. Setting the user account for the project</h3>
+  <li>Create your project folder and open gitbash in that folder, you can <strong>right click -> open with gitbash</strong> or <strong>right click -> see more options -> open with gitbash</strong></li>
+
+  <li>The very first thing you need to do is setup the folder as a new git repository</li>
+  <span class="code">git init</span>
+
+  <li>Now setup your username and email</li>
+
+  <span class="code">git config user.name "name"
+git config user.email "email@example.com"</span>
+
+  <h2>⊞ Windows key generation</h2>
+  <h3>Step 2. Generate ssh keys copy over to github</h3>
+  <li>open GIT GUI and navigate to help -> show ssh keys -> generate ssh keys</li>
+  <li>Copy the key to the clip board and go to <a href="github.com">github.com</a></li>
+  <img src="../images/git-gui-ssh.png" alt="help -> Show SSH Key -> Generate key">
+  <li>Pick a good password and do not forget it, as you will need it later to push</li>
+
+  <h2> MAC / <img class="icon" src="../images/linux-icon.png"> Linux key generation</h2>
+  <h3>Step 2. Generate the public and private keys for github</h3>
+  <span class="code">ssh-keygen -t ed25519 -C "your_email@example.com"</span>
+  <h3>cat the public key file</h3>
+  <span class="code">cat ~/.ssh/ed25519.pub</span>
+  <h3>Copy the public key to the clipboard</h3>
+  <span class="code">ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIsvjnY3w5Yqgi2esTF1IUc10O6/1PrulvCzVH8d2ki7 your_email@example.com</span>
+
+  <img src="../images/github1.png" alt="">
+
+  <img src="../images/github2.png" alt="">
+  
+  <img src="../images/github3.png" alt="">
+  
+  <img src="../images/github4.png" alt="">
+  
+  <img src="../images/github5.png" alt="">
+
+  <h3>Step 3. Test the connection</h3>
+
+  <span class="code">ssh git@github.com -T</span>
+  <span class="text">This is what you should see if you have done everything right!</span>
+  <span class="code">Enter passphrase for key '/Users/shady/.ssh/id_ed25519':
+Hi 1337encrypted! You've successfully authenticated, but GitHub does not provide shell access.</span>
+
+  <h3>Step 4. Add the url of the remote repository and set the branch as main</h3>
+
+  <span class="note">Note: you should have already created a repository on github to add the url here</span>
+
+  <li>set the remote url of the repository</li>
+  <span class="code">git remote add origin email:username/repositoryName.git</span>
+  
+  <li>You now need to set the project branch as main</li>
+  <span class="code">git branch -M main</span>
+  
+  <h2 id="windows-git-ssh-2" class="center pageTitle">2. check the status, add, commit, push and repeat</h2>
+  <li>Check the status of the files in the staging area</li>
+  <span class="code">git status</span>
+  <li>If the color is red then you need to add the files to the staging area. Check the status again they should have turned green</li>
+  <span class="code">git add .</span>
+  <li>Commit is like creating a timestamp, you can save progress by commiting</li>
+  <span class="code">git add commit -m "message"</span>
+  <li>Push your changes to github</li>
+  <span class="code">git push -u origin main</span>
+
   </div>
   `,
   
@@ -679,7 +749,7 @@ function displayText(contentId) {
     articleHeaderBottom.innerHTML = contentId;
 
     var textBox = document.getElementById("textBox");
-    textBox.innerHTML = textContents[contentId] || `<center><img src="../images/lock.png" alt="🔒"><center>`;
+    textBox.innerHTML = textContents[contentId] || `<center><img id="lockimage" src="../images/lock.png" alt="🔒"><center>`;
 }
 
 
