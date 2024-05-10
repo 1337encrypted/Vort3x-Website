@@ -61,18 +61,18 @@ var textContents = {
   <div class="container">
   <h1 class="center pageTitle">Shell basics</h1>
   <div class="vertical-menu">
-  <a class="vertical-menu-header">Navigation commands</a>
+  <a class="vertical-menu-header center">NAVIGATION COMMANDS</a>
   <a href="#ls-section">🢡 ls - list directory</a>
   <a href="#cd-section">🢡 cd - change directory</a>
   <a href="#pwd-section">🢡 pwd - print working directory</a>
-  <a class="vertical-menu-header">Manuplating files and directories</a>
+  <a class="vertical-menu-header center">MANUPLATING FILES AND DIRECTORIES</a>
   <a href="#touch-section">🢡 touch - create a new file</a>
   <a href="#mkdir-section">🢡 mkdir - make a new directory</a>
   <a href="#cp-section">🢡 cp - copy files or directories</a>
   <a href="#mv-section">🢡 mv - move or rename file and directories</a>
   <a href="#rm-section">🢡 rm - delete files or directories</a>
   <a href="#rmdir-section">🢡 rmdir - remove a empty directory</a>
-  <a class="vertical-menu-header">Interacting with shell</a>
+  <a class="vertical-menu-header center">INTERACTING WITH SHELL</a>
   <a href="#clear-section">🢡 clear - clears the terminal</a>
   <a href="#cat-section">🢡 cat - outputs contents of a file to the terminal</a>
   </div>
@@ -382,15 +382,19 @@ The whole git routine can be split into 2 main componenets. Its the same routine
   <span class="text">1. Setting the user account and generating keys</span>
   <span class="text">2. check the status, add, commit, push and repeat</span>
   <div class="vertical-menu">
-  <h3 class="center">CONTENTS</h3>
-  <a href="#git-setup" class="vertical-menu-header"></a>
+  <a href="#git-setup" class="vertical-menu-header center">CONTENTS</a>
   <a href="#git-ssh-1">🢡 Setting the user account and generating keys</a>
+  <a href="#git-step1">🢡 Step 1. Setting the user account for the project</a>
+  <a href="#git-step2">🢡 Step 2. Generate ssh keys copy over to github</a>
+  <a href="#git-step3">🢡 Step 3. Add the key to github</a>
+  <a href="#git-step4">🢡 Step 4. Test the connection</a>
+  <a href="#git-step5">🢡 Step 5. Add the url of the remote repository and set the branch as main</a>
   <a href="#git-ssh-2">🢡 Check the status, add, commit, push and repeat</a>
   </div>
   
-  <h2 id="windows-git-ssh-1" class="center pageTitle">1. Setting the user account and generating keys</h2>
+  <h2 id="git-ssh-1" class="center pageTitle">1. Setting the user account and generating keys</h2>
   
-  <h3>Step 1. Setting the user account for the project</h3>
+  <h3 id="git-step1">Step 1. Setting the user account for the project</h3>
   <li>Create your project folder and open gitbash in that folder, you can <strong>right click -> open with gitbash</strong> or <strong>right click -> see more options -> open with gitbash</strong></li>
 
   <li>The very first thing you need to do is setup the folder as a new git repository</li>
@@ -401,21 +405,22 @@ The whole git routine can be split into 2 main componenets. Its the same routine
   <span class="code">git config user.name "name"
 git config user.email "email@example.com"</span>
 
-  <h2>⊞ Windows key generation</h2>
-  <h3>Step 2. Generate ssh keys copy over to github</h3>
+  <h3 id="git-step2">Step 2. Generate ssh keys copy over to github</h3>
+
+  <h4>⊞ Windows key generation (skip if you are using MAC or Linux)</h4>
   <li>open GIT GUI and navigate to help -> show ssh keys -> generate ssh keys</li>
   <li>Copy the key to the clip board and go to <a href="github.com">github.com</a></li>
   <img src="../images/git-gui-ssh.png" alt="help -> Show SSH Key -> Generate key">
   <li>Pick a good password and do not forget it, as you will need it later to push</li>
 
-  <h2> MAC / <img class="icon" src="../images/linux-icon.png"> Linux key generation</h2>
-  <h3>Step 2. Generate the public and private keys for github</h3>
+  <h4> MAC / <img class="icon" src="../images/linux-icon.png"> Linux key generation (skip if you are using windows)</h4>
   <span class="code">ssh-keygen -t ed25519 -C "your_email@example.com"</span>
   <h3>cat the public key file</h3>
   <span class="code">cat ~/.ssh/ed25519.pub</span>
   <h3>Copy the public key to the clipboard</h3>
   <span class="code">ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIsvjnY3w5Yqgi2esTF1IUc10O6/1PrulvCzVH8d2ki7 your_email@example.com</span>
 
+  <h3 id="git-step3">Step 3. Add the key to github</h3>
   <img src="../images/github1.png" alt="">
 
   <img src="../images/github2.png" alt="">
@@ -426,14 +431,14 @@ git config user.email "email@example.com"</span>
   
   <img src="../images/github5.png" alt="">
 
-  <h3>Step 3. Test the connection</h3>
+  <h3 id="git-step4">Step 4. Test the connection</h3>
 
   <span class="code">ssh git@github.com -T</span>
   <span class="text">This is what you should see if you have done everything right!</span>
   <span class="code">Enter passphrase for key '/Users/shady/.ssh/id_ed25519':
 Hi 1337encrypted! You've successfully authenticated, but GitHub does not provide shell access.</span>
 
-  <h3>Step 4. Add the url of the remote repository and set the branch as main</h3>
+  <h3 id="git-step5">Step 5. Add the url of the remote repository and set the branch as main</h3>
 
   <span class="note">Note: you should have already created a repository on github to add the url here</span>
 
@@ -443,7 +448,7 @@ Hi 1337encrypted! You've successfully authenticated, but GitHub does not provide
   <li>You now need to set the project branch as main</li>
   <span class="code">git branch -M main</span>
   
-  <h2 id="windows-git-ssh-2" class="center pageTitle">2. check the status, add, commit, push and repeat</h2>
+  <h2 id="git-ssh-2" class="center pageTitle">2. check the status, add, commit, push and repeat</h2>
   <li>Check the status of the files in the staging area</li>
   <span class="code">git status</span>
   <li>If the color is red then you need to add the files to the staging area. Check the status again they should have turned green</li>
