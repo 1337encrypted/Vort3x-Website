@@ -12,6 +12,7 @@ document.head.appendChild(styleElement);
 var textContents = {
 '0x00':`
 <div class="container">
+<h1 class="center pageTitle">0x00: SSH</h1>
 <span class="text">The objective of this stage is to access the game via SSH. You should connect to the host whose IP is displayed on the LCD screen on the IOT evaluation board.</span>
 
 <span class="text">Use the credentials:</span>
@@ -28,6 +29,7 @@ Password: <strong>shell00</strong></span>
 
 '0x01':`
 <div class="container">
+<h1 class="center pageTitle">0x01</h1>
 <span class="text">
 The passphrase for accessing the subsequent stage can be found within a document named <strong>readme</strong>
 in the main folder.
@@ -40,6 +42,7 @@ Utilize this passphrase for accessing 0x02 via SSH.
 
 '0x02':`
 <div class="container">
+<h1 class="center pageTitle">0x02</h1>
 <span class="text">
 The passphrase for advancing to the subsequent can be found within a document named <strong>"-"</strong>
 located in the main directory.
@@ -54,6 +57,7 @@ located in the main directory.
 
 '0x03':`
 <div class="container">
+<h1 class="center pageTitle">0x03</h1>
 <span class="text">
 The passphrase for accessing the next can be found within a hidden file within the <strong>inhere</strong> directory.
 <span>
@@ -64,6 +68,7 @@ The passphrase for accessing the next can be found within a hidden file within t
 
 '0x04':`
 <div class="container">
+<h1 class="center pageTitle">0x04</h1>
 <span class="text">
 The passphrase for advancing to the subsequent is located in the sole file that is readable by
 humans within the <strong>inhere</strong> directory.
@@ -77,6 +82,7 @@ humans within the <strong>inhere</strong> directory.
 
 '0x05':`
 <div class="container">
+<h1 class="center pageTitle">0x05</h1>
 <span class="text">
 The passphrase for progressing to the next can be found in a file within the <strong>inhere</strong> directory
 that possesses the following characteristics:
@@ -91,6 +97,7 @@ that possesses the following characteristics:
 
 '0x06': `
 <div class="container">
+<h1 class="center pageTitle">0x06</h1>
 <span class="text">
 The passphrase for accessing the subsequent is located somewhere on the server and meets the 
 following criteria:
@@ -106,6 +113,7 @@ following criteria:
 
 '0x07':`
 <div class="container">
+<h1 class="center pageTitle">0x07</h1>
 <span class="text">
 The passphrase for advancing to the next is located in the file data.txt next to the term <strong>millionth</strong>
 <span>
@@ -114,9 +122,9 @@ The passphrase for advancing to the next is located in the file data.txt next to
 </div>
 `,
 
-'0x08': '<div class="container"></div>',
-'0x09': '<div class="container"></div>',
-'0x0A': '<div class="container"></div>',
+'0x08': '<div class="container"><h1 class="center pageTitle">0x08</h1></div>',
+'0x09': '<div class="container"><h1 class="center pageTitle">0x09</h1></div>',
+'0x0A': '<div class="container"><h1 class="center pageTitle">0x0A</h1></div>',
 };
 
 
