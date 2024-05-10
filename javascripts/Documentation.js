@@ -373,7 +373,6 @@ Relative Pathnames - A relative pathname starts from the working directory</span
   
   'git basics': `
   <div class="container">
-
   <h1 class="center pageTitle">git-basics</h1>
   <span class="text">
 The whole git routine can be split into 2 main componenets. Its the same routine for Windows, Mac and Linux, but except for the key generation part.
@@ -581,9 +580,9 @@ Hi 1337encrypted! You've successfully authenticated, but GitHub does not provide
   <h1 class="center pageTitle">data types</h1>
   <table border="1">
     <tr>
-      <th style="width: 90px;">Data Type</th>
-      <th style="width: 120px;">Alias</th>
-      <th style="width: 105px;">Size (bytes)</th>
+      <th>Data Type</th>
+      <th>Alias</th>
+      <th>Size (bytes)</th>
       <th>Lower Limit</th>
       <th>Upper Limit</th>
     </tr>
@@ -620,14 +619,14 @@ Hi 1337encrypted! You've successfully authenticated, but GitHub does not provide
       <td>unsigned long</td>
       <td>4</td>
       <td>0</td>
-      <td>4,294,967,295</td>
+      <td>2^32</td>
     </tr>
     <tr>
       <td>int32_t</td>
       <td>long</td>
       <td>4</td>
-      <td>-2,147,483,648</td>
-      <td>2,147,483,647</td>
+      <td>-(2^32)/2</td>
+      <td>(2^32)/2-1</td>
     </tr>
     <tr>
       <td>bool</td>
@@ -640,15 +639,15 @@ Hi 1337encrypted! You've successfully authenticated, but GitHub does not provide
       <td>float</td>
       <td>-</td>
       <td>4</td>
-      <td>-3.4028235E+38</td>
-      <td>3.4028235E+38</td>
+      <td>-3.40E+38</td>
+      <td>3.40E+38</td>
     </tr>
     <tr>
       <td>double</td>
       <td>-</td>
       <td>8</td>
-      <td>-1.7976931348623157E+308</td>
-      <td>1.7976931348623157E+308</td>
+      <td>-1.79E+308</td>
+      <td>1.79E+308</td>
     </tr>
   </table>
   </div>
