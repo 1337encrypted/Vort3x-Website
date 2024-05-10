@@ -62,19 +62,19 @@ var textContents = {
   <h1 class="center pageTitle">Shell basics</h1>
   <div class="vertical-menu">
   <a class="vertical-menu-header center">NAVIGATION COMMANDS</a>
-  <a href="#ls-section">🢡 ls - list directory</a>
-  <a href="#cd-section">🢡 cd - change directory</a>
-  <a href="#pwd-section">🢡 pwd - print working directory</a>
+  <a href="#ls-section">ls - list directory</a>
+  <a href="#cd-section">cd - change directory</a>
+  <a href="#pwd-section">pwd - print working directory</a>
   <a class="vertical-menu-header center">MANUPLATING FILES AND DIRECTORIES</a>
-  <a href="#touch-section">🢡 touch - create a new file</a>
-  <a href="#mkdir-section">🢡 mkdir - make a new directory</a>
-  <a href="#cp-section">🢡 cp - copy files or directories</a>
-  <a href="#mv-section">🢡 mv - move or rename file and directories</a>
-  <a href="#rm-section">🢡 rm - delete files or directories</a>
-  <a href="#rmdir-section">🢡 rmdir - remove a empty directory</a>
+  <a href="#touch-section">touch - create a new file</a>
+  <a href="#mkdir-section">mkdir - make a new directory</a>
+  <a href="#cp-section">cp - copy files or directories</a>
+  <a href="#mv-section">mv - move or rename file and directories</a>
+  <a href="#rm-section">rm - delete files or directories</a>
+  <a href="#rmdir-section">rmdir - remove a empty directory</a>
   <a class="vertical-menu-header center">INTERACTING WITH SHELL</a>
-  <a href="#clear-section">🢡 clear - clears the terminal</a>
-  <a href="#cat-section">🢡 cat - outputs contents of a file to the terminal</a>
+  <a href="#clear-section">clear - clears the terminal</a>
+  <a href="#cat-section">cat - outputs contents of a file to the terminal</a>
   </div>
 
   <hr>
@@ -383,13 +383,13 @@ The whole git routine can be split into 2 main componenets. Its the same routine
   <span class="text">2. check the status, add, commit, push and repeat</span>
   <div class="vertical-menu">
   <a href="#git-setup" class="vertical-menu-header center">CONTENTS</a>
-  <a href="#git-ssh-1">🢡 Setting the user account and generating keys</a>
-  <a href="#git-step1">🢡 Step 1. Setting the user account for the project</a>
-  <a href="#git-step2">🢡 Step 2. Generate ssh keys copy over to github</a>
-  <a href="#git-step3">🢡 Step 3. Add the key to github</a>
-  <a href="#git-step4">🢡 Step 4. Test the connection</a>
-  <a href="#git-step5">🢡 Step 5. Add the url of the remote repository and set the branch as main</a>
-  <a href="#git-ssh-2">🢡 Check the status, add, commit, push and repeat</a>
+  <a href="#git-ssh-1">Setting the user account and generating keys</a>
+  <a href="#git-step1">Step 1. Setting the user account for the project</a>
+  <a href="#git-step2">Step 2. Generate ssh keys copy over to github</a>
+  <a href="#git-step3">Step 3. Add the key to github</a>
+  <a href="#git-step4">Step 4. Test the connection</a>
+  <a href="#git-step5">Step 5. Setup remote repository and branch</a>
+  <a href="#git-ssh-2">Check the status, add, commit, push and repeat</a>
   </div>
   
   <h2 id="git-ssh-1" class="center pageTitle">1. Setting the user account and generating keys</h2>

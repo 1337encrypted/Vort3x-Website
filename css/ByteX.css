@@ -530,7 +530,7 @@ body footer a:link:hover, footer a:visited:hover {
     }
 
     body main section p.levelTitle {
-        font-size: medium;
+        font-size: small;
     }
 
     body main article{
