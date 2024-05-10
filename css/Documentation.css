@@ -94,7 +94,6 @@ body header .headerBottom li, a, button{
 body header section nav {
     margin: 1px;
     width: 100%;
-    /* height: 40px; */
     padding: 5px;
     background-color: #E6E6FA;
 }
@@ -119,6 +118,10 @@ body header section nav .nav_links li a {
     transition: all 0.3s ease 0s;
 }
 
+body header section nav #docs-color{
+    background-color: #E6E6FA;
+}
+
 body header section nav .nav_links li a:hover{
     /* background-color: grey; */
     color: white !important;
@@ -130,17 +133,6 @@ body header section nav .nav_links .current:visited{
     color: white;
 }
 
-/* body header .headerBottom .SignupButton {
-    position: absolute;
-    background-color: #E6E6FA;
-    top: 2px;
-    right: 10px;
-    width: 45px;
-    height: 30px;
-    text-decoration: underline;
-    color: black;
-    transition: all 0.3s ease 0s;
-} */
 
 body main {
     width: 800px;
