@@ -122,6 +122,10 @@ body header section nav #docs-color{
     background-color: #E6E6FA;
 }
 
+body header section nav #shellx-color {
+    background-color:#8b8bff;
+}
+
 body header section nav .nav_links li a:hover{
     /* background-color: grey; */
     color: white !important;

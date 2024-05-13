@@ -10,7 +10,7 @@ var textContents = {
 
   <span class="center note">Note: User account should be created before attempting to solve the assignments</span>
 
-  <h3 class="center">Assignment 1.0: File and Directory Operations</h3>
+  <h3 class="center">Assignment 0.0: File and Directory Operations</h3>
   
   <ul>  
   <input type="checkbox"> Create a new directory called <strong>folder1</strong> in your <strong>users home</strong> directory.
@@ -24,7 +24,7 @@ var textContents = {
   <input type="checkbox"> Delete the <strong>file3.txt</strong> file using the <strong>rm</strong> command.
   <input type="checkbox"> Remove the backup subdirectory and its contents using the <strong>rm -r</strong> command.</ul>
  
-  <h3 class="center">Assignment 1.1: Directory Navigation and Listing</h3>
+  <h3 class="center">Assignment 0.1: Directory Navigation and Listing</h3>
   <ul>  
   <input type="checkbox"> Navigate to your <strong>users home</strong> directory using the cd command.
   <input type="checkbox"> List the contents of the current directory using the <strong>ls</strong> command.
@@ -37,7 +37,7 @@ var textContents = {
   <input type="checkbox"> Remove the project directory and all its contents using the <strong>rm -r</strong> command.
   <input type="checkbox"> Verify that the project directory has been removed by listing the contents of your home directory using the <strong>ls</strong> command.</ul>
   
-  <h3 class="center">Assignment 1.3: File Copying and Moving</h3>
+  <h3 class="center">Assignment 0.2: File Copying and Moving</h3>
   <ul>  
   <input type="checkbox"> Navigate to your <strong>users home</strong> directory.
   <input type="checkbox"> Create a new directory called <strong>files</strong>.
@@ -68,25 +68,25 @@ var textContents = {
   The <strong>Resistor</strong> can come anywhere in the circuit but its ideal to place it <strong>between the digital pin and long</strong> leg of led.
   </span>
   <h1 class="pageTitle">digitalWrite</h1>
-  <h3>Task 2.0: Random number</h3>
+  <h3>Task 1.0: Random number</h3>
   <li>Connect an LED to pin number 2 of arduino</li>
   <li>Generate a random numbers using the random function between 0 to 10 in arduino and store it in a variable</li>
   <span class="code">Example: int randNum = random(0,10)</span>
   <li>Turn the <strong>led on</strong> if its a even number</li>
   <li>Turn the <strong>led off</strong> if its a odd number</li>
   <li>Use a delay of 1 second</li>
-  <h3>Task 2.1: Blink an LED with the least delay time possible</h3>
+  <h3>Task 1.1: Blink an LED with the least delay time possible</h3>
   <li>Connect an LED to pin 4 and turn it on and off using digitalWrite</li>
   <li>You need to determine the least dealy time possible without he LED completely turning on.</li>
   <h1 class="pageTitle">analogWrite</h1>
-  <h3>Task 2.2: Control the voltage using PWM </h3>
+  <h3>Task 1.2: Control the voltage using PWM </h3>
   <li>Connect an LED to pin 3</li>
   <li>You need to set the PWM <strong>On time</strong> to 75% dutycycle and <strong>Off time</strong> to 25% dutycycle</li>
-  <h3>Task 2.3: Fade the LED</h3>
+  <h3>Task 1.3: Fade the LED</h3>
   <li>Connect an LED to any of the PWM pins on the arduino uno</li>
   <li>You need to start from 0 dutycycle all the way to 255 dutycycle and back again to 0 in an infinite loop using PWM</li>
   <h1 class="pageTitle">Intermediate Challenges</h1>
-  <h3>Task 2.4: Create a binary 3 bit counter</h3>
+  <h3>Task 1.4: Create a binary 3 bit counter</h3>
   <li>Connect the LED's to pin number 3, 4 and 5</li>   
   <li>Create a binary counter which counts from 0 to 7 in binary, use suitable delay between the count.</li>
   <p class="text center">
@@ -99,7 +99,7 @@ var textContents = {
   110
   111
   </p>
-  <h3>Task 2.5: Random binary generator</h3>
+  <h3>Task 1.5: Random binary generator</h3>
   <li>Connect 3 LED's to pin numbers 2, 3 and 4 of arduino</li>
   <li>Generate a random numbers between 0 to 8 and store it in a variable</li>
   <li>Generate the equivalent binary sequence using the LED's</li>
@@ -111,12 +111,21 @@ var textContents = {
 
   Input: 6
   Output:110</p>
-  <h3>Task 2.6: Create a traffic light simulator</h3>
+  <h3>Task 1.6: Create a traffic light simulator</h3>
   <li>Connect redLed to pin 3, yellowLed to pin 4 and greenLed to pin 5</li>
   <li>Use the digitalWrite function to control the sequence in which the LEDs turn on and off, creating a traffic light effect.</li>
   </div>
   `,
-  '0x02': `<div class="container"></div>`,
+  '0x02': `<div class="container">
+  <h1 class="center pageTitle">0x02: State Machines</h1>
+  <h3>Task 2.0: LED State Machine</h3>
+  <span class="text">
+  Create an led state machine of int8_t data type
+  ON,
+  OFF,
+  PWM
+  </span>
+  </div>`,
   '0x03': `<div class="container"></div>`,
   '0x04': `<div class="container"></div>`,
   '0x05': `<div class="container"></div>`,
@@ -245,11 +254,11 @@ var textContents = {
   <span class="code">rm -r files</span>
   </div>`,
 
-  'lock-0x01-solution': `
+  '0x01-solution': `
   <div class="container">
   <h1 class="center pageTitle">0x01: Led solutions</h1>
   <h1>digitalWrite</h1>
-  <h3>Solution 2.0: Random number</h3>
+  <h3>Solution 1.0: Random number</h3>
   <span class="code">
   constexpr uint8_t ledPin = 2;
   void setup() 
@@ -272,7 +281,7 @@ var textContents = {
   }
 </span>
 
-<h3>Solution 2.1: Blink an LED with the least delay time possible</h3>
+<h3>Solution 1.1: Blink an LED with the least delay time possible</h3>
 <span class="code">
 constexpr uint8_t ledPin = 2;
 void setup() 
@@ -291,7 +300,7 @@ void loop()
 </span>
 
 <h1>analogWrite</h1>
-<h3>Solution 2.2: Control the voltage using PWM</h3>
+<h3>Solution 1.2: Control the voltage using PWM</h3>
 <span class="code">
 constexpr uint8_t ledPin = 2;
 void setup() 
@@ -312,7 +321,7 @@ void loop()
 }
 </span>
 
-<h3>Solution 2.3: Fade the LED</h3>
+<h3>Solution 1.3: Fade the LED</h3>
 <span class="code">
 constexpr uint8_t ledPin = 2;
 void setup() 
@@ -327,7 +336,7 @@ void loop()
 }
 </span>
 
-<h3>Solution 2.4: Create a binary 3 bit counter</h3>
+<h3>Solution 1.4: Create a binary 3 bit counter</h3>
 <table>
   <thead>
     <tr>

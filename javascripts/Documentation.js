@@ -653,7 +653,7 @@ Hi 1337encrypted! You've successfully authenticated, but GitHub does not provide
   </div>
   `,
 
-  'lock-serial': `
+  'serial': `
   <div class="container">
   <h1 class="center pageTitle">Serial communication</h1>
   <h3>Serial part 1: serial.ino</h3>
@@ -682,10 +682,39 @@ Hi 1337encrypted! You've successfully authenticated, but GitHub does not provide
   'state machines': `
   <div class="container">
   <h1 class="center pageTitle">state-machines</h1>
+  <img src="../images/state_model_diagrams.png" alt="State Model Diagrams">
+  <li>A finite state machine (FSM) is a mathematical model used to design sequential logic circuits or to describe the behaviour of a system.</li>
+  <li>A system can only exist in one state at a given time.</li>
+  <li>FSM can change from one state to another in response to some inputs, the change from one state to another is called a transition.</li>
+  <h2>Traffic lights example</h2>
+  <img src="../images/state_machines_traffic_light_example.png" alt="State Machines Traffic Light Example">  
+  <h3>Traffic lights boilerplate code</h3>
+  <span class="code">
+  enum states : int8_t {
+    STOP,
+    READY_TO_GO,
+    GO,
+    READY_TO_STOP
+  };
+  states status = STOP;
+  </span>
+  <span class="code">
+  switch(status) {
+    case STOP: //code
+    break;
+    case READY_TO_GO: //code
+    break;
+    case GO: //code
+    break;
+    case READY_TO_STOP: //code
+    break;
+  }
+  </span>
+
   </div>
   `,
 
-  'lock-bluetooth': `
+  'bluetooth': `
   <div class="container">
   <h1 class="center pageTitle">bluetooth</h1>
   <h3>Bluetooth part 1: ble.ino</h3>
