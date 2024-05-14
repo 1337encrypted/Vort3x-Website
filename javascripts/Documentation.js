@@ -470,6 +470,9 @@ Hi 1337encrypted! You've successfully authenticated, but GitHub does not provide
   <div class="container">
   <h1 class="center pageTitle">led</h1>
   <span class="note">
+  <h3>  RESOURCES</h3>
+  <a href="https://www.digikey.in/en/resources/conversion-calculators/conversion-calculator-led-series-resistor">LED Series Resistor Calculator</a>
+  
   <strong>pinMode(pin, INPUT/OUTPUT/INPUT_PULLUP);</strong>
   
   INPUT - 0
@@ -679,9 +682,44 @@ Hi 1337encrypted! You've successfully authenticated, but GitHub does not provide
   </div>
   `,
 
+  'bluetooth': `
+  <div class="container">
+  <h1 class="center pageTitle">bluetooth</h1>
+  <h3>Bluetooth part 1: ble.ino</h3>
+  <span class="code">
+  void setup() {
+    Serial.begin(9600);
+  }
+  
+  void loop() {
+    if(Serial.available()){
+      char receiveData = Serial.read();
+      Serial.println(receiveData);
+    }
+  }
+  </span>
+  <div>
+  `,
+  
+  'resistor': `
+  <div class="container">
+  <h1 class="center pageTitle">resistor</h1>
+  <span class="note">
+  <h3>RESOURCES</h3>
+<a href="https://www.digikey.in/en/resources/conversion-calculators/conversion-calculator-resistor-color-code">Online Resistor Color Code Calculator</a>
+  </span>
+  <img src="../images/resistor.png" alt="">
+  </div>
+  `,
+
   'state machines': `
   <div class="container">
   <h1 class="center pageTitle">state-machines</h1>
+  <span class="note">
+  <h3>RESOURCES</h3>
+  <a href="https://wokwi.com/projects/397400492233962497">Traffic lights state machine code example</a>
+  <a href="https://wokwi.com/projects/397747621985938433">Pushbutton state machine code example</a>
+  </span>
   <img src="../images/state_model_diagrams.png" alt="State Model Diagrams">
   <li>A finite state machine (FSM) is a mathematical model used to design sequential logic circuits or to describe the behaviour of a system.</li>
   <li>A system can only exist in one state at a given time.</li>
@@ -714,36 +752,40 @@ Hi 1337encrypted! You've successfully authenticated, but GitHub does not provide
   </div>
   `,
 
-  'bluetooth': `
+  'pushbutton': `
   <div class="container">
-  <h1 class="center pageTitle">bluetooth</h1>
-  <h3>Bluetooth part 1: ble.ino</h3>
+  <h1 class="center pageTitle">pushbutton</h1>
+    <div style="display: flex; flex-direction: row;">
+      <img src="../images/pushbutton.png" alt="pushbutton" style="width: 35%; border: none;">
+      <img src="../images/pull_up_and_pull_down_configuration.jpeg" alt="pull_up_and_pull_down_configuration" style="width: 65%; border: none;">
+    </div>
+  <h3>Pushbutton state machine</h3>
   <span class="code">
-  void setup() {
-    Serial.begin(9600);
-  }
-  
-  void loop() {
-    if(Serial.available()){
-      char receiveData = Serial.read();
-      Serial.println(receiveData);
-    }
+  enum pushButtonStates : int8_t {
+    PRESSED = 0,
+    RELEASED = 1
+  };
+  pushButtonStates pushButtonStatus = RELEASED;
+  </span>
+  <span class="code">
+  switch(pushButtonStatus) {
+    case PRESSED:
+    //code
+    break;
+    case RELEASED:
+    //code
+    break
   }
   </span>
-  <div>
+  </div>
   `,
-  
+
   'class': `
   <div class="container">
   <h1 class="center pageTitle">class</h1>
   </div>
   `,
   
-  'object': `
-  <div class="container">
-  <h1 class="center pageTitle">object</h1>
-  </div>
-  `,
 
   'buzzer': `
   <div class="container">
@@ -751,11 +793,6 @@ Hi 1337encrypted! You've successfully authenticated, but GitHub does not provide
   </div>
   `,
   
-  'pushbutton': `
-  <div class="container">
-  <h1 class="center pageTitle">pushbutton</h1>
-  </div>
-  `,
   
   '7 segment display': `
   <div class="container">

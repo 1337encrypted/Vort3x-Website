@@ -68,25 +68,25 @@ var textContents = {
   The <strong>Resistor</strong> can come anywhere in the circuit but its ideal to place it <strong>between the digital pin and long</strong> leg of led.
   </span>
   <h1 class="pageTitle">digitalWrite</h1>
-  <h3>Task 1.0: Random number</h3>
+  <h3><input type="checkbox"> Assignment 1.0: Random number</h3>
   <li>Connect an LED to pin number 2 of arduino</li>
   <li>Generate a random numbers using the random function between 0 to 10 in arduino and store it in a variable</li>
   <span class="code">Example: int randNum = random(0,10)</span>
   <li>Turn the <strong>led on</strong> if its a even number</li>
   <li>Turn the <strong>led off</strong> if its a odd number</li>
   <li>Use a delay of 1 second</li>
-  <h3>Task 1.1: Blink an LED with the least delay time possible</h3>
+  <h3><input type="checkbox"> Assignment 1.1: Blink an LED with the least delay time possible</h3>
   <li>Connect an LED to pin 4 and turn it on and off using digitalWrite</li>
   <li>You need to determine the least dealy time possible without he LED completely turning on.</li>
   <h1 class="pageTitle">analogWrite</h1>
-  <h3>Task 1.2: Control the voltage using PWM </h3>
+  <h3><input type="checkbox"> Assignment 1.2: Control the voltage using PWM </h3>
   <li>Connect an LED to pin 3</li>
   <li>You need to set the PWM <strong>On time</strong> to 75% dutycycle and <strong>Off time</strong> to 25% dutycycle</li>
-  <h3>Task 1.3: Fade the LED</h3>
+  <h3><input type="checkbox"> Assignment 1.3: Fade the LED</h3>
   <li>Connect an LED to any of the PWM pins on the arduino uno</li>
   <li>You need to start from 0 dutycycle all the way to 255 dutycycle and back again to 0 in an infinite loop using PWM</li>
   <h1 class="pageTitle">Intermediate Challenges</h1>
-  <h3>Task 1.4: Create a binary 3 bit counter</h3>
+  <h3><input type="checkbox"> Assignment 1.4: Create a binary 3 bit counter</h3>
   <li>Connect the LED's to pin number 3, 4 and 5</li>   
   <li>Create a binary counter which counts from 0 to 7 in binary, use suitable delay between the count.</li>
   <p class="text center">
@@ -99,7 +99,7 @@ var textContents = {
   110
   111
   </p>
-  <h3>Task 1.5: Random binary generator</h3>
+  <h3><input type="checkbox"> Assignment 1.5: Random binary generator</h3>
   <li>Connect 3 LED's to pin numbers 2, 3 and 4 of arduino</li>
   <li>Generate a random numbers between 0 to 8 and store it in a variable</li>
   <li>Generate the equivalent binary sequence using the LED's</li>
@@ -111,19 +111,80 @@ var textContents = {
 
   Input: 6
   Output:110</p>
-  <h3>Task 1.6: Create a traffic light simulator</h3>
+  <h3><input type="checkbox"> Assignment 1.6: Create a traffic light simulator</h3>
   <li>Connect redLed to pin 3, yellowLed to pin 4 and greenLed to pin 5</li>
   <li>Use the digitalWrite function to control the sequence in which the LEDs turn on and off, creating a traffic light effect.</li>
   </div>
   `,
+
   '0x02': `<div class="container">
   <h1 class="center pageTitle">0x02: State Machines</h1>
-  <h3>Task 2.0: LED State Machine</h3>
-  <span class="text">
-  Create an led state machine of int8_t data type
-  ON,
-  OFF,
-  PWM
+
+  <span class="note">
+  <h3>Example syntax to create a state machine</h3>
+  enum states : int8_t {
+    STATE0 = 0,
+    STATE1 = 1,
+    STATE2 = 2
+  };
+
+  states status = STATE1;
+
+  <h3>Switch between states</h3>
+  switch(status) {
+    case STATE1:
+      //code
+    break;
+
+    case STATE2:
+      //code
+    break;
+
+    case STATE3:
+      //code
+    break;
+
+    default:
+      Serial.println("CODE SHOULD NEVER ENTER THE DEFAULT CASE");
+  }
+  </span>
+
+  <h3><input type="checkbox"> Assignment 2.0: Control the LED</h3><span class="text">
+  Create a pushbutton state machine which has the states
+  <strong>PRESSED,</strong>
+  <strong>RELEASED</strong>
+  Create a LED state machine which has the states
+  <strong>ON,</strong>
+  <strong>OFF</strong>
+  When the pushbutton state is <strong>PRESSED</strong> change the led state to <strong>ON</strong>
+  When the pushbutton state is <strong>RELEASED</strong> change the led state to <strong>OFF</strong>
+  </span>
+  <h3><input type="checkbox"> Assignment 2.1: Toggle LED with Pushbutton</h3><span class="text">
+  <strong>Modify Assignment 2.1</strong> code to
+  Change the state of led to <strong>ON</strong> when the pushbutton is pressed once,
+  Change the state of led to <strong>OFF</strong> when the pushbutton is pressed again.
+  Likewise keep toggling the state of the LED every time the push button is pressed.
+  </span>
+  <h3><input type="checkbox"> Assignment 2.2: Fade LED brightness using Pushbutton</h3><span class="text">
+  Design a state machine to set the PWM duty cycle of the LED
+  The state machine should contain the following states
+  <strong>ZERO_PERCENT = 0,
+  TWENTY_PERCENT = 1,
+  FORTY_PERCENT = 2,
+  SIXTY_PERCENT = 3,
+  EIGHTY_PERCENT = 4,
+  HUNDRED_PERCENT = 5</strong>
+  Print the duty cycle on the serial monitor
+  </span>
+  <h3><input type="checkbox"> Assignment 2.3: User input</h3><span class="text">
+  <strong>Modify Assignment 2.2</strong> to make it compatible with user inputs.
+  When the user types <strong>0</strong> in the Serial monitor then the LED should set to <strong>ZERO_PERCENT</strong> state.
+  When the user types <strong>1</strong> in the Serial monitor then the LED should set to <strong>TWENTY_PERCENT</strong> state.
+  Helper boilerplate logic to read user inputs.
+  <span class="code">
+  if(Serial.available() > 0) {
+    pushButtonStatus = (pushButtonStates)Serial.read();
+  }
   </span>
   </div>`,
   '0x03': `<div class="container"></div>`,
@@ -132,7 +193,6 @@ var textContents = {
   '0x06': `<div class="container"></div>`,
   '0x07': `<div class="container"></div>`,
   '0x08': `<div class="container"></div>`,
-
 
 
 
