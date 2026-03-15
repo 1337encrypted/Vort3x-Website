@@ -462,7 +462,46 @@ Hi 1337encrypted! You've successfully authenticated, but GitHub does not provide
   
   'pin numbers': `
   <div class="container">
-  <h1 class="center pageTitle">pin-numbers</h1>
+  <h1 class="center pageTitle">Arduino Uno Pin Numbers</h1>
+  <span class="note">
+  <h3>DIGITAL PINS (0–13)</h3>
+  Pin 0  (RX)  - Serial receive  — avoid if Serial is active
+  Pin 1  (TX)  - Serial transmit — avoid if Serial is active
+  Pin 2        - Digital I/O | External Interrupt 0
+  Pin 3  (~)   - Digital I/O | PWM | External Interrupt 1
+  Pin 4        - Digital I/O
+  Pin 5  (~)   - Digital I/O | PWM
+  Pin 6  (~)   - Digital I/O | PWM
+  Pin 7        - Digital I/O
+  Pin 8        - Digital I/O
+  Pin 9  (~)   - Digital I/O | PWM
+  Pin 10 (~)   - Digital I/O | PWM | SS (SPI)
+  Pin 11 (~)   - Digital I/O | PWM | MOSI (SPI)
+  Pin 12       - Digital I/O | MISO (SPI)
+  Pin 13       - Digital I/O | SCK (SPI) | Built-in LED
+
+  <h3>ANALOG PINS (A0–A5)</h3>
+  A0 - Analog Input (10-bit: 0–1023)
+  A1 - Analog Input
+  A2 - Analog Input
+  A3 - Analog Input
+  A4 - Analog Input | SDA (I2C)
+  A5 - Analog Input | SCL (I2C)
+
+  <h3>POWER PINS</h3>
+  5V    - 5 volt output
+  3.3V  - 3.3 volt output (max 50mA)
+  GND   - Ground
+  VIN   - Input voltage (7–12V)
+  RESET - Reset the microcontroller
+
+  (~) = PWM capable pin</span>
+  <h3>pinMode syntax</h3>
+  <span class="code">
+  pinMode(pin, OUTPUT);       // set pin as output
+  pinMode(pin, INPUT);        // set pin as input (floating — add external pull resistor)
+  pinMode(pin, INPUT_PULLUP); // set pin as input with internal pull-up (~20-50kΩ)
+  </span>
   </div>
   `,
   
@@ -658,47 +697,127 @@ Hi 1337encrypted! You've successfully authenticated, but GitHub does not provide
 
   'serial': `
   <div class="container">
-  <h1 class="center pageTitle">Serial communication</h1>
-  <h3>Serial part 1: serial.ino</h3>
+  <h1 class="center pageTitle">Serial Communication</h1>
+  <span class="note">
+  The Serial monitor allows Arduino to communicate with your PC over USB.
+  Open it via: Tools → Serial Monitor (or Ctrl+Shift+M).
+  Baud rate in code and Serial Monitor dropdown must match.
+  </span>
+
+  <h3>Serial part 1: Basic print</h3>
   <span class="code">
   void setup() {
-    // Serial.begin(9600);
-  
-    while (!Serial) {
-      
-    }; // wait for serial port to connect.
-  
-    Serial.print("USB connected");
+    Serial.begin(9600);
   }
-  
-  void loop() {}
+
+  void loop() {
+    Serial.println("Hello from Arduino!"); // print with newline
+    Serial.print("Value: ");               // print without newline
+    Serial.println(42);
+    delay(1000);
+  }
   </span>
 
-  <h3>Serial part 2:</h3>
+  <h3>Serial part 2: Read from Serial monitor</h3>
   <span class="code">
-  
+  void setup() {
+    Serial.begin(9600);
+  }
+
+  void loop() {
+    if(Serial.available() > 0) {
+      char received = Serial.read();
+      Serial.print("You sent: ");
+      Serial.println(received);
+    }
+  }
   </span>
 
+  <h3>Serial part 3: Read an integer</h3>
+  <span class="code">
+  void setup() {
+    Serial.begin(9600);
+  }
+
+  void loop() {
+    if(Serial.available() > 0) {
+      int value = Serial.parseInt();
+      Serial.print("Parsed integer: ");
+      Serial.println(value);
+    }
+  }
+  </span>
+
+  <h3>Useful Serial methods</h3>
+  <span class="code">
+  Serial.begin(9600);        // initialize with baud rate
+  Serial.print("text");      // print without newline
+  Serial.println("text");    // print with newline
+  Serial.println(value);     // print a number
+  Serial.available();        // bytes waiting to be read (> 0 means data ready)
+  Serial.read();             // read one byte as char
+  Serial.parseInt();         // read and parse an integer from serial stream
+  Serial.flush();            // wait for all outgoing data to transmit
+  </span>
   </div>
   `,
 
   'bluetooth': `
   <div class="container">
-  <h1 class="center pageTitle">bluetooth</h1>
-  <h3>Bluetooth part 1: ble.ino</h3>
+  <h1 class="center pageTitle">Bluetooth (HC-05)</h1>
+  <span class="note">
+  The HC-05 is a Bluetooth serial module. It acts as a wireless serial link —
+  data sent to the HC-05 appears on the Arduino's Serial, and vice versa.
+
+  Wiring:
+    VCC  → 5V
+    GND  → GND
+    TXD  → Arduino RX (pin 0)
+    RXD  → Arduino TX (pin 1) — use a voltage divider (5V→3.3V for RXD)
+
+  Default baud rate: 9600  |  Default AT-command baud: 38400
+  Default pairing PIN: 1234 or 0000
+  </span>
+
+  <h3>Bluetooth part 1: Echo received data</h3>
   <span class="code">
   void setup() {
     Serial.begin(9600);
   }
-  
+
   void loop() {
-    if(Serial.available()){
-      char receiveData = Serial.read();
-      Serial.println(receiveData);
+    if(Serial.available()) {
+      char received = Serial.read();
+      Serial.println(received); // echo back to phone
     }
   }
   </span>
-  <div>
+
+  <h3>Bluetooth part 2: Control LED via Bluetooth</h3>
+  <span class="code">
+  constexpr uint8_t ledPin = 2;
+
+  void setup() {
+    Serial.begin(9600);
+    pinMode(ledPin, OUTPUT);
+  }
+
+  void loop() {
+    if(Serial.available()) {
+      char cmd = Serial.read();
+      if(cmd == '1') {
+        digitalWrite(ledPin, HIGH);
+        Serial.println("LED ON");
+      } else if(cmd == '0') {
+        digitalWrite(ledPin, LOW);
+        Serial.println("LED OFF");
+      }
+    }
+  }
+  </span>
+  <li>Use a Bluetooth terminal app (e.g. <strong>Serial Bluetooth Terminal</strong> on Android) to send '1' and '0'</li>
+  <li>Disconnect the HC-05 from pins 0 and 1 before uploading sketches</li>
+  </div>
   `,
   
   'resistor': `
@@ -780,35 +899,341 @@ Hi 1337encrypted! You've successfully authenticated, but GitHub does not provide
   </div>
   `,
 
+  'object': `
+  <div class="container">
+  <h1 class="center pageTitle">Objects in C++ (Arduino)</h1>
+  <span class="note">
+  An object is an instance of a class. Each object has its own copy of the class's attributes.
+  You can create multiple independent objects from the same class.
+  </span>
+
+  <h3>Creating objects</h3>
+  <span class="code">
+  // Using the Led class from the "class" reference:
+  Led redLed(2);    // object on pin 2
+  Led greenLed(3);  // object on pin 3
+
+  void setup() {}
+
+  void loop() {
+    redLed.on();   greenLed.off(); delay(500);
+    redLed.off();  greenLed.on();  delay(500);
+  }
+  </span>
+
+  <h3>Objects in arrays</h3>
+  <span class="code">
+  Led leds[3] = { Led(2), Led(3), Led(4) };
+
+  void setup() {}
+
+  void loop() {
+    for(uint8_t i = 0; i < 3; i++) {
+      leds[i].on();
+      delay(300);
+      leds[i].off();
+    }
+  }
+  </span>
+
+  <h3>Passing objects to functions</h3>
+  <span class="code">
+  void blink(Led &led, uint16_t ms) {
+    led.on();  delay(ms);
+    led.off(); delay(ms);
+  }
+
+  Led myLed(2);
+
+  void setup() {}
+
+  void loop() {
+    blink(myLed, 500);
+  }
+  </span>
+  </div>
+  `,
+
   'class': `
   <div class="container">
-  <h1 class="center pageTitle">class</h1>
+  <h1 class="center pageTitle">Classes in C++ (Arduino)</h1>
+  <span class="note">
+  A class bundles data (attributes) and behaviour (methods) into a single unit.
+  Access modifiers:
+    <strong>public</strong>  — accessible from anywhere
+    <strong>private</strong> — only accessible inside the class (default)
+  </span>
+
+  <h3>Basic class structure</h3>
+  <span class="code">
+  class ClassName {
+    private:
+      int attribute;          // data member
+
+    public:
+      ClassName(int val) {    // constructor — called when object is created
+        attribute = val;
+      }
+
+      void setVal(int v) { attribute = v; }   // setter
+      int  getVal()      { return attribute; } // getter
+  };
+  </span>
+
+  <h3>Example: Led class</h3>
+  <span class="code">
+  class Led {
+    private:
+      uint8_t pin;
+      bool    state;
+
+    public:
+      Led(uint8_t p) : pin(p), state(false) {
+        pinMode(pin, OUTPUT);
+      }
+
+      void on()     { state = true;  digitalWrite(pin, HIGH); }
+      void off()    { state = false; digitalWrite(pin, LOW);  }
+      void toggle() { state ? off() : on(); }
+      bool isOn()   { return state; }
+  };
+
+  Led myLed(2); // create object for pin 2
+
+  void setup() {}
+
+  void loop() {
+    myLed.on();  delay(500);
+    myLed.off(); delay(500);
+  }
+  </span>
   </div>
   `,
   
 
   'buzzer': `
   <div class="container">
-  <h1 class="center pageTitle">buzzer</h1>
+  <h1 class="center pageTitle">Buzzer</h1>
+  <span class="note">
+  <strong>Active buzzer:</strong> produces sound when power is applied — just use digitalWrite.
+  <strong>Passive buzzer:</strong> requires a frequency signal — use tone().
+  Wiring: one leg to a digital pin, other leg to GND.
+  </span>
+
+  <h3>Active buzzer: simple on/off</h3>
+  <span class="code">
+  constexpr uint8_t buzzerPin = 8;
+
+  void setup() { pinMode(buzzerPin, OUTPUT); }
+
+  void loop() {
+    digitalWrite(buzzerPin, HIGH); // buzzer on
+    delay(500);
+    digitalWrite(buzzerPin, LOW);  // buzzer off
+    delay(500);
+  }
+  </span>
+
+  <h3>Passive buzzer: tone() function</h3>
+  <span class="code">
+  // tone(pin, frequency);              play indefinitely
+  // tone(pin, frequency, duration_ms); play for duration then stop
+  // noTone(pin);                       stop the tone
+
+  constexpr uint8_t buzzerPin = 8;
+
+  void setup() { pinMode(buzzerPin, OUTPUT); }
+
+  void loop() {
+    tone(buzzerPin, 440, 500); // A4 note, 500ms
+    delay(600);
+    tone(buzzerPin, 523, 500); // C5 note, 500ms
+    delay(600);
+  }
+  </span>
+
+  <h3>Common note frequencies (Hz)</h3>
+  <span class="code">
+  C4=262  D4=294  E4=330  F4=349
+  G4=392  A4=440  B4=494  C5=523
+  </span>
   </div>
   `,
   
   
   '7 segment display': `
   <div class="container">
-  <h1 class="center pageTitle">7-segment-display</h1>
+  <h1 class="center pageTitle">7-Segment Display</h1>
+  <span class="note">
+  A 7-segment display has 7 LED segments (a–g) plus a decimal point.
+  <strong>Common Cathode:</strong> segments turn ON with digitalWrite HIGH
+  <strong>Common Anode:</strong>  segments turn ON with digitalWrite LOW
+
+  Segment layout:
+     aaa
+    f   b
+    f   b
+     ggg
+    e   c
+    e   c
+     ddd  .dp
+  </span>
+
+  <h3>Segment to pin mapping (Common Cathode)</h3>
+  <span class="code">
+  //  Seg:  a  b  c  d  e  f  g
+  //  Pin:  2  3  4  5  6  7  8
+
+  const uint8_t segPins[7] = {2,3,4,5,6,7,8};
+
+  // Digit patterns (a,b,c,d,e,f,g) for digits 0–9
+  const uint8_t digits[10][7] = {
+    {1,1,1,1,1,1,0}, // 0
+    {0,1,1,0,0,0,0}, // 1
+    {1,1,0,1,1,0,1}, // 2
+    {1,1,1,1,0,0,1}, // 3
+    {0,1,1,0,0,1,1}, // 4
+    {1,0,1,1,0,1,1}, // 5
+    {1,0,1,1,1,1,1}, // 6
+    {1,1,1,0,0,0,0}, // 7
+    {1,1,1,1,1,1,1}, // 8
+    {1,1,1,1,0,1,1}  // 9
+  };
+
+  void displayDigit(uint8_t d) {
+    for(uint8_t s = 0; s < 7; s++)
+      digitalWrite(segPins[s], digits[d][s]);
+  }
+
+  void setup() {
+    for(uint8_t i = 0; i < 7; i++)
+      pinMode(segPins[i], OUTPUT);
+  }
+
+  void loop() {
+    for(uint8_t d = 0; d <= 9; d++) {
+      displayDigit(d);
+      delay(1000);
+    }
+  }
+  </span>
   </div>
   `,
   
   'keypad': `
   <div class="container">
-  <h1 class="center pageTitle">4x4-keypad</h1>
+  <h1 class="center pageTitle">4×4 Keypad</h1>
+  <span class="note">
+  A 4×4 keypad has 16 keys arranged in 4 rows and 4 columns using 8 pins total.
+  Install the <strong>Keypad</strong> library: Sketch → Include Library → Manage Libraries → search "Keypad" by Mark Stanley.
+  </span>
+
+  <h3>Keypad layout</h3>
+  <span class="code">
+  1  2  3  A
+  4  5  6  B
+  7  8  9  C
+  *  0  #  D
+  </span>
+
+  <h3>Wiring</h3>
+  <span class="code">
+  Row pins (left to right on keypad): R1=9  R2=8  R3=7  R4=6
+  Col pins (left to right on keypad): C1=5  C2=4  C3=3  C4=2
+  </span>
+
+  <h3>Basic example</h3>
+  <span class="code">
+  #include &lt;Keypad.h&gt;
+
+  const uint8_t ROWS = 4, COLS = 4;
+
+  char keys[ROWS][COLS] = {
+    {'1','2','3','A'},
+    {'4','5','6','B'},
+    {'7','8','9','C'},
+    {'*','0','#','D'}
+  };
+
+  uint8_t rowPins[ROWS] = {9, 8, 7, 6};
+  uint8_t colPins[COLS] = {5, 4, 3, 2};
+
+  Keypad keypad = Keypad(makeKeymap(keys), rowPins, colPins, ROWS, COLS);
+
+  void setup() { Serial.begin(9600); }
+
+  void loop() {
+    char key = keypad.getKey();
+    if(key) Serial.println(key);
+  }
+  </span>
   </div>
   `,
 
   'lcd': `
   <div class="container">
-  <h1 class="center pageTitle">lcd-16x2</h1>
+  <h1 class="center pageTitle">LCD 16×2 (I2C)</h1>
+  <span class="note">
+  The LCD 16×2 has 16 columns and 2 rows.
+  Using the I2C backpack module reduces wiring to just 4 wires.
+
+  Wiring (I2C backpack):
+    VCC → 5V    GND → GND    SDA → A4    SCL → A5
+
+  Install library: Sketch → Include Library → Manage Libraries → "LiquidCrystal I2C" by Frank de Brabander
+  If the display is blank, try I2C address 0x3F instead of 0x27.
+  </span>
+
+  <h3>LCD part 1: Hello World</h3>
+  <span class="code">
+  #include &lt;LiquidCrystal_I2C.h&gt;
+  LiquidCrystal_I2C lcd(0x27, 16, 2);
+
+  void setup() {
+    lcd.init();
+    lcd.backlight();
+    lcd.setCursor(0, 0);
+    lcd.print("Hello World!");
+    lcd.setCursor(0, 1);
+    lcd.print("Vort3x");
+  }
+
+  void loop() {}
+  </span>
+
+  <h3>LCD part 2: Live data display</h3>
+  <span class="code">
+  #include &lt;LiquidCrystal_I2C.h&gt;
+  LiquidCrystal_I2C lcd(0x27, 16, 2);
+
+  void setup() {
+    lcd.init();
+    lcd.backlight();
+  }
+
+  void loop() {
+    lcd.setCursor(0, 0);
+    lcd.print("Uptime(s):      ");
+    lcd.setCursor(0, 1);
+    lcd.print(millis() / 1000);
+    lcd.print("       ");
+    delay(500);
+  }
+  </span>
+
+  <h3>Useful LCD methods</h3>
+  <span class="code">
+  lcd.init();               // initialize LCD
+  lcd.backlight();          // turn on backlight
+  lcd.noBacklight();        // turn off backlight
+  lcd.clear();              // clear display and reset cursor
+  lcd.setCursor(col, row);  // set cursor (0-indexed, col first)
+  lcd.print("text");        // print text at current cursor
+  lcd.print(number);        // print a number
+  lcd.scrollDisplayLeft();  // scroll content left one position
+  lcd.scrollDisplayRight(); // scroll content right one position
+  lcd.home();               // move cursor to (0,0)
+  </span>
   </div>
   `,
   

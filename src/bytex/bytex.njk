@@ -1,0 +1,42 @@
+---
+permalink: /bytex.html
+title: ".::BYTEX::."
+currentPage: bytex
+---
+{% extends "layouts/bytex.njk" %}
+
+{% block pageTitle %}.::THE EMBEDDED WAY!::.{% endblock %}
+
+{% block initialContent %}
+<div class="container">
+<p class="center">Hope you enjoy solving these challenges as much as I enjoyed designing them</p>
+</div>
+{% endblock %}
+
+{% block articleContent %}
+<div class="articleHeader">Current Challenges: {{ collections.bytexChallenges | length }} | Release date : 11-02-2024</div>
+<table class="level" cellpadding="0" cellspacing="0">
+    {% for level in collections.bytexChallenges %}
+    <tr onclick="displayText('{% if level.data.locked %}lock-{% endif %}{{ level.data.id }}');"><td align="left">{{ level.data.label }}</td><td align="right">{{ level.data.author }}</td></tr>
+    {% endfor %}
+</table>
+<div class="articleHeader">Current Solutions: {{ collections.bytexSolutions | length }} | Release date : 09-05-2024</div>
+<table class="level" cellpadding="0" cellspacing="0">
+    {% for level in collections.bytexSolutions %}
+    <tr onclick="displayText('{% if level.data.locked %}lock-{% endif %}{{ level.data.id }}');"><td align="left">{{ level.data.label }}</td><td align="right">{{ level.data.author }}</td></tr>
+    {% endfor %}
+</table>
+{% endblock %}
+
+{% block textContentsScript %}
+<script>
+var textContents = {
+{% for level in collections.bytexChallenges %}{% if not level.data.locked %}
+    {{ level.data.id | jsondump | safe }}: {{ level.templateContent | jsondump | safe }},
+{% endif %}{% endfor %}
+{% for level in collections.bytexSolutions %}{% if not level.data.locked %}
+    {{ level.data.id | jsondump | safe }}: {{ level.templateContent | jsondump | safe }},
+{% endif %}{% endfor %}
+};
+</script>
+{% endblock %}

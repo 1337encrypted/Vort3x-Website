@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    {% block headStyles %}{% endblock %}
+</head>
+<body>
+    <header>
+        <section class="headerTop">
+            <pre class="logo">
+{% block logo %}{% endblock %}
+            </pre>
+        </section>
+
+        <section class="headerBottom">
+            <nav>
+                <ul class="nav_links">
+                    <li><a href="/"{% if currentPage == "home" %} class="current"{% endif %}>HOME</a></li>
+                    <li><a href="/shellx.html"{% if currentPage == "shellx" %} class="current"{% endif %}>SHELLX</a></li>
+                    <li><a href="/bytex.html"{% if currentPage == "bytex" %} class="current"{% endif %}>BYTEX</a></li>
+                    <li><a href="/docs.html"{% if currentPage == "docs" %} class="current"{% endif %}>DOCS</a></li>
+                </ul>
+            </nav>
+        </section>
+    </header>
+
+    {% block body %}{% endblock %}
+
+    <footer>
+        <section>
+            <p>
+                <a href="http://16.171.179.211/abs-guide/index.html" title="Resources">[ Resources ]</a>
+                <a href="https://github.com/srushtim-01/Vort3x-Website" title="Repo">[ Repo ]</a>
+                <a href="/faq.html" title="FAQ">[ FAQ ]</a>
+                <a href="/authors.html" title="Authors">[ Authors ]</a>
+                <a href="/archives.html" title="Archives">[ Archives ]</a>
+                <a href="/contact.html" title="Contact">[ Contact ]</a>
+            </p>
+        </section>
+        <section>
+            <p>
+                <span class="text">v1.0 design</span>
+                <span class="text">&#x2756;</span>
+                <span class="text">original content <a href="mailto:theVortexTeam@gmail.com">Vort3x</a></span>
+                <span class="text">&#x2756;</span>
+                <span class="text">© Copyright 2024, Vort3x</span>
+            </p>
+        </section>
+    </footer>
+
+    {% block scripts %}{% endblock %}
+</body>
+</html>

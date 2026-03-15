@@ -1,0 +1,15 @@
+{% extends "layouts/base.njk" %}
+
+{% block headStyles %}
+    <link rel="stylesheet" href="/css/vortex.css">
+{% endblock %}
+
+{% block logo %}
+{% include "logos/home.html" %}
+{% endblock %}
+
+{% block body %}
+    <main>
+        {% block main %}{% endblock %}
+    </main>
+{% endblock %}

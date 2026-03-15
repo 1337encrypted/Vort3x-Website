@@ -122,9 +122,47 @@ The passphrase for advancing to the next is located in the file data.txt next to
 </div>
 `,
 
-'0x08': '<div class="container"><h1 class="center pageTitle">0x08</h1></div>',
-'0x09': '<div class="container"><h1 class="center pageTitle">0x09</h1></div>',
-'0x0A': '<div class="container"><h1 class="center pageTitle">0x0A</h1></div>',
+'0x08': `
+<div class="container">
+<h1 class="center pageTitle">0x08</h1>
+<span class="text">
+The passphrase for advancing to the next level is stored in the file <strong>data.txt</strong>
+and is the only line of text that occurs only <strong>once</strong>.
+</span>
+<h3>Commands that might be useful for solving this include:</h3>
+<a href="https://www.geeksforgeeks.org/grep-command-in-unixlinux/">grep</a>,
+<a href="https://www.geeksforgeeks.org/sort-command-linuxunix-examples/">sort</a>,
+<a href="https://www.geeksforgeeks.org/uniq-command-in-linux-with-examples-2/">uniq</a>
+<p id=hint>Hint: Try piping sort and uniq together. Look at the uniq man page for a useful flag.</p>
+</div>
+`,
+
+'0x09': `
+<div class="container">
+<h1 class="center pageTitle">0x09</h1>
+<span class="text">
+The passphrase for advancing to the next level is stored in the file <strong>data.txt</strong>
+in one of the few human-readable strings, preceded by several <strong>=</strong> characters.
+</span>
+<h3>Commands that might be useful for solving this include:</h3>
+<a href="https://www.geeksforgeeks.org/strings-command-in-linux-with-examples/">strings</a>,
+<a href="https://www.geeksforgeeks.org/grep-command-in-unixlinux/">grep</a>
+<p id=hint>Hint: Use strings to extract human-readable content, then grep for lines with ===.</p>
+</div>
+`,
+
+'0x0A': `
+<div class="container">
+<h1 class="center pageTitle">0x0A</h1>
+<span class="text">
+The passphrase for advancing to the next level is stored in the file <strong>data.txt</strong>,
+which contains <strong>base64</strong> encoded data.
+</span>
+<h3>Commands that might be useful for solving this include:</h3>
+<a href="https://www.geeksforgeeks.org/convert-text-file-strings-into-base64-encoding/">base64</a>
+<p id=hint>Hint: base64 has a decode flag. Try: cat data.txt | base64 --decode</p>
+</div>
+`,
 };
 
 

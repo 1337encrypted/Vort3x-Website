@@ -1,0 +1,33 @@
+---
+permalink: /docs.html
+title: ".::DOCS::."
+currentPage: docs
+---
+{% extends "layouts/docs.njk" %}
+
+{% block pageTitle %}.::RESOURCES::.{% endblock %}
+
+{% block initialContent %}
+<div class="container">
+    <h1 class="center pageTitle">Welcome to knowledge grid of Vort3x</h1>
+</div>
+{% endblock %}
+
+{% block articleContent %}
+<div class="articleHeader">Current topics: {{ collections.docsEntries | length }} | Release date : 11-02-2024 | Editor : The Vortex Staff</div>
+<table class="level" cellpadding="0" cellspacing="0">
+    {% for entry in collections.docsEntries %}
+    <tr onclick="displayText('{% if entry.data.locked %}lock-{% endif %}{{ entry.data.id }}');"><td align="left">{{ entry.data.label }}</td><td align="right">{{ entry.data.author }}</td></tr>
+    {% endfor %}
+</table>
+{% endblock %}
+
+{% block textContentsScript %}
+<script>
+var textContents = {
+{% for entry in collections.docsEntries %}{% if not entry.data.locked %}
+    {{ entry.data.id | jsondump | safe }}: {{ entry.templateContent | jsondump | safe }},
+{% endif %}{% endfor %}
+};
+</script>
+{% endblock %}

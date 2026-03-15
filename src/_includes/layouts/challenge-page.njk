@@ -1,0 +1,18 @@
+{% extends "layouts/base.njk" %}
+
+{% block body %}
+    <main>
+        <section>
+            <p class="levelTitle">{% block pageTitle %}{% endblock %}</p>
+        </section>
+        <article>
+            <div class="articleHeaderBottom">posted by Vortex Staff</div>
+            <pre><code id="textBox">{% block initialContent %}{% endblock %}</code></pre>
+            {% block articleContent %}{% endblock %}
+        </article>
+    </main>
+{% endblock %}
+
+{% block scripts %}
+    {% block textContentsScript %}{% endblock %}
+{% endblock %}

@@ -187,11 +187,197 @@ var textContents = {
   }
   </span>
   </div>`,
-  '0x03': `<div class="container"></div>`,
-  '0x04': `<div class="container"></div>`,
-  '0x05': `<div class="container"></div>`,
-  '0x06': `<div class="container"></div>`,
-  '0x07': `<div class="container"></div>`,
+  '0x03': `
+  <div class="container">
+  <h1 class="center pageTitle">0x03: Pushbutton</h1>
+  <span class="note">
+  <h3>Resources</h3>
+  <a href="./Documentation.html">Pushbutton wiring reference</a>
+
+  Use a <strong>pull-down resistor (10kΩ)</strong> — pin reads LOW when open, HIGH when pressed.
+  Or use <strong>INPUT_PULLUP</strong> — pin reads HIGH when open, LOW when pressed (no external resistor needed).
+  </span>
+
+  <h3><input type="checkbox"> Assignment 3.0: Read a pushbutton</h3>
+  <li>Connect a pushbutton to pin 7 with a pull-down resistor</li>
+  <li>Set pin 7 as INPUT using pinMode</li>
+  <li>Read the button state using <strong>digitalRead(7)</strong></li>
+  <li>Print <strong>"PRESSED"</strong> to serial monitor when HIGH, <strong>"RELEASED"</strong> when LOW</li>
+
+  <h3><input type="checkbox"> Assignment 3.1: Toggle LED with pushbutton (debounced)</h3>
+  <li>Connect a pushbutton to pin 7 and an LED to pin 2</li>
+  <li>Each press <strong>toggles</strong> the LED (ON → OFF → ON)</li>
+  <li>Debounce the button: only act on the LOW-to-HIGH transition, add a 50ms delay after change</li>
+  <p id=hint>Hint: Store the previous button state. Only toggle when current != previous.</p>
+
+  <h3><input type="checkbox"> Assignment 3.2: Button press counter</h3>
+  <li>Count how many times the button has been pressed</li>
+  <li>Print the count to the serial monitor on each press</li>
+  <li>Reset the counter to 0 when the count reaches 10</li>
+
+  <h3><input type="checkbox"> Assignment 3.3: Multi-mode LED</h3>
+  <li>Each button press cycles the LED through 3 modes: <strong>OFF → DIM (25%) → BRIGHT (100%) → OFF</strong></li>
+  <li>Use <strong>analogWrite</strong> for brightness control on a PWM pin (pin 3, 5, 6, 9, 10, or 11)</li>
+  <li>Print the current mode name to the serial monitor</li>
+  </div>
+  `,
+
+  '0x04': `
+  <div class="container">
+  <h1 class="center pageTitle">0x04: Classes</h1>
+  <span class="note">
+  <h3>Basic class syntax</h3>
+  class MyClass {
+    private:
+      int attribute;
+    public:
+      MyClass(int val) { attribute = val; } // constructor
+      void setVal(int v) { attribute = v; }
+      int  getVal()      { return attribute; }
+  };
+  MyClass obj(42); // create an object
+  obj.getVal();    // call a method
+  </span>
+
+  <h3><input type="checkbox"> Assignment 4.0: Led class</h3>
+  <li>Create a class called <strong>Led</strong> with a private attribute <strong>pin</strong></li>
+  <li>Add a constructor that accepts the pin number and calls pinMode(pin, OUTPUT)</li>
+  <li>Add public methods: <strong>on()</strong>, <strong>off()</strong>, <strong>toggle()</strong></li>
+  <li>Instantiate the Led class for pin 2 and blink it every second in loop()</li>
+
+  <h3><input type="checkbox"> Assignment 4.1: Button class</h3>
+  <li>Create a class called <strong>Button</strong> with a private attribute <strong>pin</strong></li>
+  <li>Add a constructor that sets up the pin as INPUT_PULLUP</li>
+  <li>Add a public method <strong>isPressed()</strong> that returns true when the button is pressed</li>
+  <li>Add a method <strong>wasJustPressed()</strong> that returns true only on the falling edge (debounced)</li>
+  <li>Use the Button class to toggle the Led class from Assignment 4.0</li>
+
+  <h3><input type="checkbox"> Assignment 4.2: Non-blocking Blinker class</h3>
+  <li>Create a class called <strong>Blinker</strong> that blinks an LED without using delay()</li>
+  <li>Private attributes: pin, interval (ms), lastTime, state</li>
+  <li>Add an <strong>update()</strong> method that checks millis() and toggles the LED when the interval has passed</li>
+  <li>Create two Blinker objects on different pins and different rates (e.g., 200ms and 700ms)</li>
+  <li>Call both update() methods in loop() — they should blink simultaneously</li>
+  <p id=hint>Hint: unsigned long lastTime = 0; if(millis() - lastTime >= interval) { lastTime = millis(); toggle; }</p>
+  </div>
+  `,
+
+  '0x05': `
+  <div class="container">
+  <h1 class="center pageTitle">0x05: Buzzer</h1>
+  <span class="note">
+  <h3>tone() function syntax</h3>
+  tone(pin, frequency);             // play indefinitely
+  tone(pin, frequency, duration_ms); // play for duration then stop
+  noTone(pin);                       // stop tone
+
+  <strong>Common note frequencies (Hz)</strong>
+  C4=262  D4=294  E4=330  F4=349
+  G4=392  A4=440  B4=494  C5=523
+
+  Connect buzzer: one leg to digital pin, other leg to GND.
+  <strong>Passive buzzers</strong> require a frequency signal (use tone).
+  <strong>Active buzzers</strong> just need power (use digitalWrite).
+  </span>
+
+  <h3><input type="checkbox"> Assignment 5.0: Generate a single tone</h3>
+  <li>Connect a passive buzzer to pin 8</li>
+  <li>Play a 440Hz tone for 1 second, then silence for 1 second, in an infinite loop</li>
+
+  <h3><input type="checkbox"> Assignment 5.1: Play a musical scale</h3>
+  <li>Play the C-major scale: C4 D4 E4 F4 G4 A4 B4 C5 (frequencies: 262 294 330 349 392 440 494 523)</li>
+  <li>Each note lasts 300ms with a 50ms gap between notes</li>
+  <li>Store frequencies in an array and loop through it</li>
+
+  <h3><input type="checkbox"> Assignment 5.2: Play a melody</h3>
+  <li>Program the buzzer to play <strong>Mary Had a Little Lamb</strong></li>
+  <span class="code">Notes: E D C D E E E | D D D | E G G | E D C D E E E E D D E D C</span>
+  <li>Store the note frequencies and durations in two parallel arrays</li>
+
+  <h3><input type="checkbox"> Assignment 5.3: Police siren</h3>
+  <li>Sweep the frequency from 800Hz up to 1200Hz and back down repeatedly</li>
+  <li>Use a for loop with tone() and a small delay (5ms) between each step</li>
+  <li>The effect should sound like a continuous wailing siren</li>
+  </div>
+  `,
+
+  '0x06': `
+  <div class="container">
+  <h1 class="center pageTitle">0x06: 7-Segment Display</h1>
+  <span class="note">
+  <h3>Segment layout and pin mapping (Common Cathode)</h3>
+     aaa
+    f   b
+    f   b
+     ggg
+    e   c
+    e   c
+     ddd
+
+  Segment: a   b   c   d   e   f   g
+  Pin:     2   3   4   5   6   7   8
+
+  Common Cathode: segments turn ON with digitalWrite(pin, HIGH)
+  Common Anode:   segments turn ON with digitalWrite(pin, LOW)
+
+  Digit patterns (segments a,b,c,d,e,f,g):
+  0=1111110  1=0110000  2=1101101  3=1111001  4=0110011
+  5=1011011  6=1011111  7=1110000  8=1111111  9=1111011
+  </span>
+
+  <h3><input type="checkbox"> Assignment 6.0: Display a single digit</h3>
+  <li>Connect a 7-segment display (Common Cathode) to pins 2–8 (segments a–g)</li>
+  <li>Store all 10 digit patterns in a 2D array: <strong>uint8_t digits[10][7]</strong></li>
+  <li>Write a <strong>displayDigit(uint8_t d)</strong> function that drives all 7 segments</li>
+  <li>Display the digit <strong>5</strong> on startup</li>
+
+  <h3><input type="checkbox"> Assignment 6.1: Count 0 to 9</h3>
+  <li>Cycle through digits 0–9 with a 1-second delay between each</li>
+  <li>After 9, wrap back to 0 and repeat</li>
+
+  <h3><input type="checkbox"> Assignment 6.2: Button-controlled counter</h3>
+  <li>Add a pushbutton on pin 9 to increment the displayed digit</li>
+  <li>Add a second pushbutton on pin 10 to decrement it</li>
+  <li>Keep the value within the range 0–9 (wrap around)</li>
+  <li>Debounce both buttons</li>
+  </div>
+  `,
+
+  '0x07': `
+  <div class="container">
+  <h1 class="center pageTitle">0x07: LCD 16x2</h1>
+  <span class="note">
+  <h3>LiquidCrystal_I2C library setup</h3>
+  #include &lt;LiquidCrystal_I2C.h&gt;
+  LiquidCrystal_I2C lcd(0x27, 16, 2); // address 0x27, 16 cols, 2 rows
+
+  void setup() {
+    lcd.init();
+    lcd.backlight();
+  }
+
+  Wiring (I2C backpack): VCC→5V  GND→GND  SDA→A4  SCL→A5
+  Install library: Sketch → Include Library → Manage Libraries → "LiquidCrystal I2C"
+  If display is blank, try I2C address 0x3F instead of 0x27.
+  </span>
+
+  <h3><input type="checkbox"> Assignment 7.0: Hello World</h3>
+  <li>Connect the LCD via I2C backpack</li>
+  <li>Display <strong>"Hello World!"</strong> on row 0 and <strong>"Vort3x"</strong> on row 1</li>
+
+  <h3><input type="checkbox"> Assignment 7.1: Scrolling text</h3>
+  <li>Display a message longer than 16 characters on the first row</li>
+  <li>Use <strong>lcd.scrollDisplayLeft()</strong> with a 300ms delay to scroll it</li>
+  <li>Make it loop continuously</li>
+
+  <h3><input type="checkbox"> Assignment 7.2: Live uptime counter</h3>
+  <li>Display <strong>"Uptime:"</strong> on row 0 (static)</li>
+  <li>Display the number of seconds since startup on row 1, updating every second</li>
+  <li>Use millis()/1000 for the elapsed seconds</li>
+  <p id=hint>Hint: Use lcd.print("      ") or lcd.clear() to erase old digits before printing new ones.</p>
+  </div>
+  `,
+
   '0x08': `<div class="container"></div>`,
 
 
@@ -313,6 +499,562 @@ var textContents = {
 
   <span class="code">rm -r files</span>
   </div>`,
+
+  '0x02-solution': `
+  <div class="container">
+  <h1 class="center pageTitle">0x02: State Machine Solutions</h1>
+
+  <h3>Solution 2.0: Control the LED</h3>
+  <span class="code">
+constexpr uint8_t ledPin    = 2;
+constexpr uint8_t buttonPin = 7;
+
+enum pushButtonStates : int8_t { PRESSED = 0, RELEASED = 1 };
+enum ledStates        : int8_t { ON = 0, OFF = 1 };
+
+pushButtonStates pushButtonStatus = RELEASED;
+ledStates        ledStatus        = OFF;
+
+void setup() {
+  pinMode(ledPin,    OUTPUT);
+  pinMode(buttonPin, INPUT);
+}
+
+void loop() {
+  pushButtonStatus = digitalRead(buttonPin) ? PRESSED : RELEASED;
+
+  switch(pushButtonStatus) {
+    case PRESSED:  ledStatus = ON;  break;
+    case RELEASED: ledStatus = OFF; break;
+    default: Serial.println("CODE SHOULD NEVER ENTER THE DEFAULT CASE");
+  }
+
+  switch(ledStatus) {
+    case ON:  digitalWrite(ledPin, HIGH); break;
+    case OFF: digitalWrite(ledPin, LOW);  break;
+    default: Serial.println("CODE SHOULD NEVER ENTER THE DEFAULT CASE");
+  }
+}
+  </span>
+
+  <h3>Solution 2.1: Toggle LED with Pushbutton</h3>
+  <span class="code">
+constexpr uint8_t ledPin    = 2;
+constexpr uint8_t buttonPin = 7;
+
+enum pushButtonStates : int8_t { PRESSED = 0, RELEASED = 1 };
+enum ledStates        : int8_t { ON = 0, OFF = 1 };
+
+pushButtonStates pushButtonStatus = RELEASED;
+pushButtonStates prevButtonStatus = RELEASED;
+ledStates        ledStatus        = OFF;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(ledPin,    OUTPUT);
+  pinMode(buttonPin, INPUT_PULLUP);
+}
+
+void loop() {
+  pushButtonStatus = digitalRead(buttonPin) ? RELEASED : PRESSED; // INPUT_PULLUP inverts logic
+
+  if(prevButtonStatus == RELEASED && pushButtonStatus == PRESSED)
+    ledStatus = (ledStates)!ledStatus; // toggle
+
+  prevButtonStatus = pushButtonStatus;
+  digitalWrite(ledPin, ledStatus == ON ? HIGH : LOW);
+  delay(50); // debounce
+}
+  </span>
+
+  <h3>Solution 2.2: Fade LED brightness using Pushbutton</h3>
+  <span class="code">
+constexpr uint8_t ledPin    = 3; // PWM pin
+constexpr uint8_t buttonPin = 7;
+
+enum pwmStates : int8_t {
+  ZERO_PERCENT     = 0,
+  TWENTY_PERCENT   = 1,
+  FORTY_PERCENT    = 2,
+  SIXTY_PERCENT    = 3,
+  EIGHTY_PERCENT   = 4,
+  HUNDRED_PERCENT  = 5
+};
+
+pwmStates        pwmStatus   = ZERO_PERCENT;
+const uint8_t    pwmValues[] = {0, 51, 102, 153, 204, 255};
+const char*      pwmNames[]  = {"0%","20%","40%","60%","80%","100%"};
+bool             prevPressed = false;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(ledPin,    OUTPUT);
+  pinMode(buttonPin, INPUT_PULLUP);
+}
+
+void loop() {
+  bool pressed = (digitalRead(buttonPin) == LOW);
+  if(pressed && !prevPressed) {
+    pwmStatus = (pwmStates)((pwmStatus + 1) % 6);
+    Serial.println(pwmNames[pwmStatus]);
+  }
+  prevPressed = pressed;
+  analogWrite(ledPin, pwmValues[pwmStatus]);
+  delay(50);
+}
+  </span>
+
+  <h3>Solution 2.3: User input via Serial</h3>
+  <span class="code">
+constexpr uint8_t ledPin = 3;
+
+enum pwmStates : int8_t {
+  ZERO_PERCENT = 0, TWENTY_PERCENT = 1, FORTY_PERCENT = 2,
+  SIXTY_PERCENT = 3, EIGHTY_PERCENT = 4, HUNDRED_PERCENT = 5
+};
+
+pwmStates     pwmStatus   = ZERO_PERCENT;
+const uint8_t pwmValues[] = {0, 51, 102, 153, 204, 255};
+const char*   pwmNames[]  = {"0%","20%","40%","60%","80%","100%"};
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(ledPin, OUTPUT);
+}
+
+void loop() {
+  if(Serial.available() > 0) {
+    int8_t input = Serial.read() - '0'; // ASCII digit → int
+    if(input >= 0 && input <= 5) {
+      pwmStatus = (pwmStates)input;
+      Serial.println(pwmNames[pwmStatus]);
+    }
+  }
+  analogWrite(ledPin, pwmValues[pwmStatus]);
+}
+  </span>
+  </div>
+  `,
+
+  '0x03-solution': `
+  <div class="container">
+  <h1 class="center pageTitle">0x03: Pushbutton Solutions</h1>
+
+  <h3>Solution 3.0: Read a pushbutton</h3>
+  <span class="code">
+constexpr uint8_t buttonPin = 7;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(buttonPin, INPUT);
+}
+
+void loop() {
+  if(digitalRead(buttonPin) == HIGH)
+    Serial.println("PRESSED");
+  else
+    Serial.println("RELEASED");
+  delay(100);
+}
+  </span>
+
+  <h3>Solution 3.1: Toggle LED with pushbutton (debounced)</h3>
+  <span class="code">
+constexpr uint8_t ledPin    = 2;
+constexpr uint8_t buttonPin = 7;
+
+bool ledState  = false;
+bool prevButton = false;
+
+void setup() {
+  pinMode(ledPin,    OUTPUT);
+  pinMode(buttonPin, INPUT_PULLUP);
+}
+
+void loop() {
+  bool pressed = (digitalRead(buttonPin) == LOW);
+  if(pressed && !prevButton) {
+    ledState = !ledState;
+    digitalWrite(ledPin, ledState ? HIGH : LOW);
+    delay(50); // debounce
+  }
+  prevButton = pressed;
+}
+  </span>
+
+  <h3>Solution 3.2: Button press counter</h3>
+  <span class="code">
+constexpr uint8_t buttonPin = 7;
+
+uint8_t count      = 0;
+bool    prevButton = false;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(buttonPin, INPUT_PULLUP);
+}
+
+void loop() {
+  bool pressed = (digitalRead(buttonPin) == LOW);
+  if(pressed && !prevButton) {
+    count++;
+    if(count >= 10) count = 0;
+    Serial.println(count);
+    delay(50);
+  }
+  prevButton = pressed;
+}
+  </span>
+
+  <h3>Solution 3.3: Multi-mode LED</h3>
+  <span class="code">
+constexpr uint8_t ledPin    = 3; // PWM pin
+constexpr uint8_t buttonPin = 7;
+
+const uint8_t brightness[] = {0, 64, 255};
+const char*   modeNames[]  = {"OFF", "DIM", "BRIGHT"};
+uint8_t       mode         = 0;
+bool          prevButton   = false;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(ledPin,    OUTPUT);
+  pinMode(buttonPin, INPUT_PULLUP);
+}
+
+void loop() {
+  bool pressed = (digitalRead(buttonPin) == LOW);
+  if(pressed && !prevButton) {
+    mode = (mode + 1) % 3;
+    analogWrite(ledPin, brightness[mode]);
+    Serial.println(modeNames[mode]);
+    delay(50);
+  }
+  prevButton = pressed;
+}
+  </span>
+  </div>
+  `,
+
+  '0x04-solution': `
+  <div class="container">
+  <h1 class="center pageTitle">0x04: Class Solutions</h1>
+
+  <h3>Solution 4.0: Led class</h3>
+  <span class="code">
+class Led {
+  private:
+    uint8_t pin;
+    bool    state;
+  public:
+    Led(uint8_t p) : pin(p), state(false) { pinMode(pin, OUTPUT); }
+    void on()     { state = true;  digitalWrite(pin, HIGH); }
+    void off()    { state = false; digitalWrite(pin, LOW);  }
+    void toggle() { state ? off() : on(); }
+};
+
+Led led(2);
+
+void setup() {}
+
+void loop() {
+  led.on();  delay(1000);
+  led.off(); delay(1000);
+}
+  </span>
+
+  <h3>Solution 4.1: Button class</h3>
+  <span class="code">
+class Led {
+  private:
+    uint8_t pin; bool state;
+  public:
+    Led(uint8_t p) : pin(p), state(false) { pinMode(pin, OUTPUT); }
+    void on()     { state = true;  digitalWrite(pin, HIGH); }
+    void off()    { state = false; digitalWrite(pin, LOW);  }
+    void toggle() { state ? off() : on(); }
+};
+
+class Button {
+  private:
+    uint8_t pin;
+    bool    prev;
+  public:
+    Button(uint8_t p) : pin(p), prev(false) { pinMode(pin, INPUT_PULLUP); }
+    bool isPressed() { return digitalRead(pin) == LOW; }
+    bool wasJustPressed() {
+      bool cur = isPressed();
+      bool just = (cur && !prev);
+      prev = cur;
+      return just;
+    }
+};
+
+Led    led(2);
+Button btn(7);
+
+void setup() {}
+
+void loop() {
+  if(btn.wasJustPressed()) {
+    led.toggle();
+    delay(50);
+  }
+}
+  </span>
+
+  <h3>Solution 4.2: Non-blocking Blinker class</h3>
+  <span class="code">
+class Blinker {
+  private:
+    uint8_t       pin;
+    unsigned long interval;
+    unsigned long lastTime;
+    bool          state;
+  public:
+    Blinker(uint8_t p, unsigned long ms)
+      : pin(p), interval(ms), lastTime(0), state(false) {
+      pinMode(pin, OUTPUT);
+    }
+    void update() {
+      if(millis() - lastTime >= interval) {
+        lastTime = millis();
+        state = !state;
+        digitalWrite(pin, state ? HIGH : LOW);
+      }
+    }
+};
+
+Blinker fast(2, 200);
+Blinker slow(3, 700);
+
+void setup() {}
+
+void loop() {
+  fast.update();
+  slow.update();
+}
+  </span>
+  </div>
+  `,
+
+  '0x05-solution': `
+  <div class="container">
+  <h1 class="center pageTitle">0x05: Buzzer Solutions</h1>
+
+  <h3>Solution 5.0: Generate a single tone</h3>
+  <span class="code">
+constexpr uint8_t buzzerPin = 8;
+
+void setup() { pinMode(buzzerPin, OUTPUT); }
+
+void loop() {
+  tone(buzzerPin, 440, 1000);
+  delay(2000);
+}
+  </span>
+
+  <h3>Solution 5.1: Play a musical scale</h3>
+  <span class="code">
+constexpr uint8_t  buzzerPin    = 8;
+const    uint16_t  scale[]      = {262, 294, 330, 349, 392, 440, 494, 523};
+
+void setup() { pinMode(buzzerPin, OUTPUT); }
+
+void loop() {
+  for(uint8_t i = 0; i < 8; i++) {
+    tone(buzzerPin, scale[i], 300);
+    delay(350);
+  }
+  delay(1000);
+}
+  </span>
+
+  <h3>Solution 5.2: Mary Had a Little Lamb</h3>
+  <span class="code">
+constexpr uint8_t buzzerPin = 8;
+
+#define E4 330
+#define D4 294
+#define C4 262
+#define G4 392
+
+const uint16_t melody[]    = {E4,D4,C4,D4,E4,E4,E4, D4,D4,D4, E4,G4,G4, E4,D4,C4,D4,E4,E4,E4,E4,D4,D4,E4,D4,C4};
+const uint8_t  durations[] = { 4, 4, 4, 4, 4, 4, 2,  4, 4, 2,  4, 4, 2,  4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 2};
+
+void setup() { pinMode(buzzerPin, OUTPUT); }
+
+void loop() {
+  for(uint8_t i = 0; i < 26; i++) {
+    tone(buzzerPin, melody[i], 1000 / durations[i]);
+    delay(1000 / durations[i] + 50);
+  }
+  delay(2000);
+}
+  </span>
+
+  <h3>Solution 5.3: Police siren</h3>
+  <span class="code">
+constexpr uint8_t buzzerPin = 8;
+
+void setup() { pinMode(buzzerPin, OUTPUT); }
+
+void loop() {
+  for(uint16_t f = 800; f <= 1200; f += 10) { tone(buzzerPin, f); delay(5); }
+  for(uint16_t f = 1200; f >= 800; f -= 10) { tone(buzzerPin, f); delay(5); }
+}
+  </span>
+  </div>
+  `,
+
+  '0x06-solution': `
+  <div class="container">
+  <h1 class="center pageTitle">0x06: 7-Segment Display Solutions</h1>
+
+  <h3>Segment mapping: a=pin2, b=pin3, c=pin4, d=pin5, e=pin6, f=pin7, g=pin8</h3>
+
+  <h3>Solution 6.0: Display a single digit</h3>
+  <span class="code">
+const uint8_t segPins[7] = {2,3,4,5,6,7,8}; // a,b,c,d,e,f,g
+
+const uint8_t digits[10][7] = {
+  {1,1,1,1,1,1,0}, // 0
+  {0,1,1,0,0,0,0}, // 1
+  {1,1,0,1,1,0,1}, // 2
+  {1,1,1,1,0,0,1}, // 3
+  {0,1,1,0,0,1,1}, // 4
+  {1,0,1,1,0,1,1}, // 5
+  {1,0,1,1,1,1,1}, // 6
+  {1,1,1,0,0,0,0}, // 7
+  {1,1,1,1,1,1,1}, // 8
+  {1,1,1,1,0,1,1}  // 9
+};
+
+void displayDigit(uint8_t d) {
+  for(uint8_t s = 0; s < 7; s++)
+    digitalWrite(segPins[s], digits[d][s]);
+}
+
+void setup() {
+  for(uint8_t i = 0; i < 7; i++)
+    pinMode(segPins[i], OUTPUT);
+}
+
+void loop() {
+  displayDigit(5); // display digit 5
+}
+  </span>
+
+  <h3>Solution 6.1: Count 0 to 9</h3>
+  <span class="code">
+// (same setup and displayDigit as above)
+void loop() {
+  for(uint8_t d = 0; d <= 9; d++) {
+    displayDigit(d);
+    delay(1000);
+  }
+}
+  </span>
+
+  <h3>Solution 6.2: Button-controlled counter</h3>
+  <span class="code">
+// (same segPins, digits, displayDigit, and setup as 6.0 — add these pins)
+constexpr uint8_t btnUp   = 9;
+constexpr uint8_t btnDown = 10;
+
+int8_t count    = 0;
+bool   prevUp   = false;
+bool   prevDown = false;
+
+void setup() {
+  for(uint8_t i = 0; i < 7; i++) pinMode(segPins[i], OUTPUT);
+  pinMode(btnUp,   INPUT_PULLUP);
+  pinMode(btnDown, INPUT_PULLUP);
+}
+
+void loop() {
+  bool up   = (digitalRead(btnUp)   == LOW);
+  bool down = (digitalRead(btnDown) == LOW);
+
+  if(up   && !prevUp)   { count = (count + 1) % 10; delay(50); }
+  if(down && !prevDown) { count = (count + 9) % 10; delay(50); } // +9 mod 10 = -1
+
+  prevUp   = up;
+  prevDown = down;
+  displayDigit(count);
+}
+  </span>
+  </div>
+  `,
+
+  '0x07-solution': `
+  <div class="container">
+  <h1 class="center pageTitle">0x07: LCD Solutions</h1>
+
+  <h3>Solution 7.0: Hello World</h3>
+  <span class="code">
+#include &lt;LiquidCrystal_I2C.h&gt;
+LiquidCrystal_I2C lcd(0x27, 16, 2);
+
+void setup() {
+  lcd.init();
+  lcd.backlight();
+  lcd.setCursor(0, 0);
+  lcd.print("Hello World!");
+  lcd.setCursor(0, 1);
+  lcd.print("Vort3x");
+}
+
+void loop() {}
+  </span>
+
+  <h3>Solution 7.1: Scrolling text</h3>
+  <span class="code">
+#include &lt;LiquidCrystal_I2C.h&gt;
+LiquidCrystal_I2C lcd(0x27, 16, 2);
+
+void setup() {
+  lcd.init();
+  lcd.backlight();
+  lcd.setCursor(0, 0);
+  lcd.print("  Welcome to Vort3x! The embedded way.  ");
+}
+
+void loop() {
+  lcd.scrollDisplayLeft();
+  delay(300);
+}
+  </span>
+
+  <h3>Solution 7.2: Live uptime counter</h3>
+  <span class="code">
+#include &lt;LiquidCrystal_I2C.h&gt;
+LiquidCrystal_I2C lcd(0x27, 16, 2);
+
+unsigned long lastUpdate = 0;
+uint32_t      seconds    = 0;
+
+void setup() {
+  lcd.init();
+  lcd.backlight();
+  lcd.setCursor(0, 0);
+  lcd.print("Uptime:");
+}
+
+void loop() {
+  if(millis() - lastUpdate >= 1000) {
+    lastUpdate = millis();
+    seconds++;
+    lcd.setCursor(0, 1);
+    lcd.print("                "); // clear row
+    lcd.setCursor(0, 1);
+    lcd.print(seconds);
+    lcd.print(" s");
+  }
+}
+  </span>
+  </div>
+  `,
 
   '0x01-solution': `
   <div class="container">
