@@ -35,5 +35,5 @@ jobs:
           script: |
             cd /home/admin/
             sudo rm -rf /var/www/html/Vortex-Website/
-            sudo mv/home /var/www/html/Vortex-Website
+            sudo mv /home/admin/ /var/www/html/Vortex-Website
             sudo nginx -s reload
