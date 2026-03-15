@@ -17,10 +17,10 @@
         <section class="headerBottom">
             <nav>
                 <ul class="nav_links">
-                    <li><a href="/"{% if currentPage == "home" %} class="current"{% endif %}>HOME</a></li>
-                    <li><a href="/shellx.html"{% if currentPage == "shellx" %} class="current"{% endif %}>SHELLX</a></li>
-                    <li><a href="/bytex.html"{% if currentPage == "bytex" %} class="current"{% endif %}>BYTEX</a></li>
-                    <li><a href="/docs.html"{% if currentPage == "docs" %} class="current"{% endif %}>DOCS</a></li>
+                    <li><a href="{{ '/' | url }}"{% if currentPage == "home" %} class="current"{% endif %}>HOME</a></li>
+                    <li><a href="{{ '/shellx.html' | url }}"{% if currentPage == "shellx" %} class="current"{% endif %}>SHELLX</a></li>
+                    <li><a href="{{ '/bytex.html' | url }}"{% if currentPage == "bytex" %} class="current"{% endif %}>BYTEX</a></li>
+                    <li><a href="{{ '/docs.html' | url }}"{% if currentPage == "docs" %} class="current"{% endif %}>DOCS</a></li>
                 </ul>
             </nav>
         </section>
@@ -33,10 +33,10 @@
             <p>
                 <a href="http://16.171.179.211/abs-guide/index.html" title="Resources">[ Resources ]</a>
                 <a href="https://github.com/srushtim-01/Vort3x-Website" title="Repo">[ Repo ]</a>
-                <a href="/faq.html" title="FAQ">[ FAQ ]</a>
-                <a href="/authors.html" title="Authors">[ Authors ]</a>
-                <a href="/archives.html" title="Archives">[ Archives ]</a>
-                <a href="/contact.html" title="Contact">[ Contact ]</a>
+                <a href="{{ '/faq.html' | url }}" title="FAQ">[ FAQ ]</a>
+                <a href="{{ '/authors.html' | url }}" title="Authors">[ Authors ]</a>
+                <a href="{{ '/archives.html' | url }}" title="Archives">[ Archives ]</a>
+                <a href="{{ '/contact.html' | url }}" title="Contact">[ Contact ]</a>
             </p>
         </section>
         <section>
