@@ -38,6 +38,7 @@ module.exports = function(eleventyConfig) {
   );
 
   return {
+    pathPrefix: "/Vort3x-Website/",
     dir: {
       input:    "src",
       output:   "_site",
