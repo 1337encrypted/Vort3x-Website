@@ -1,5 +1,8 @@
 module.exports = function(eleventyConfig) {
 
+  // Prevent GitHub Pages from running Jekyll on the output
+  eleventyConfig.addPassthroughCopy(".nojekyll");
+
   // Static assets at repo root — copy into _site/ as-is
   eleventyConfig.addPassthroughCopy({ "css":     "css"     });
   eleventyConfig.addPassthroughCopy({ "images":  "images"  });
