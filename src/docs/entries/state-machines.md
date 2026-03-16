@@ -13,12 +13,12 @@ label: "state machines"
 <a href="https://wokwi.com/projects/397400492233962497">Traffic lights state machine code example</a>
 <a href="https://wokwi.com/projects/397747621985938433">Pushbutton state machine code example</a>
 </span>
-<img src="/images/state_model_diagrams.png" alt="State Model Diagrams">
+<img src="images/state_model_diagrams.png" alt="State Model Diagrams">
 <li>A finite state machine (FSM) is a mathematical model used to design sequential logic circuits or to describe the behaviour of a system.</li>
 <li>A system can only exist in one state at a given time.</li>
 <li>FSM can change from one state to another in response to some inputs, the change from one state to another is called a transition.</li>
 <h2>Traffic lights example</h2>
-<img src="/images/state_machines_traffic_light_example.png" alt="State Machines Traffic Light Example">
+<img src="images/state_machines_traffic_light_example.png" alt="State Machines Traffic Light Example">
 <h3>Traffic lights boilerplate code</h3>
 <span class="code">
 enum states : int8_t {

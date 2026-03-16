@@ -9,8 +9,8 @@ label: "pushbutton"
 <div class="container">
 <h1 class="center pageTitle">pushbutton</h1>
 <div style="display: flex; flex-direction: row;">
-  <img src="/images/pushbutton.png" alt="pushbutton" style="width: 35%; border: none;">
-  <img src="/images/pull_up_and_pull_down_configuration.jpeg" alt="pull_up_and_pull_down_configuration" style="width: 65%; border: none;">
+  <img src="images/pushbutton.png" alt="pushbutton" style="width: 35%; border: none;">
+  <img src="images/pull_up_and_pull_down_configuration.jpeg" alt="pull_up_and_pull_down_configuration" style="width: 65%; border: none;">
 </div>
 <h3>Pushbutton state machine</h3>
 <span class="code">

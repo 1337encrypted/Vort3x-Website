@@ -83,7 +83,9 @@ body header .headerBottom {
     position: relative;
 }
 
-body header .headerBottom li, a, button{
+body header .headerBottom li,
+body header .headerBottom a,
+body header .headerBottom button {
     font-family: "ProFont", monospace;
     font-size: 30px;
     color: black;
@@ -205,7 +207,7 @@ body main article .articleHeaderBottom{
   
 #textBox {
     font-family: Hack, 'Courier New', Courier, monospace;
-    font-size: 12px;
+    font-size: 11px;
     background-color: white;
     color: black;
     padding: 20px;
@@ -226,11 +228,45 @@ body main article pre {
     padding-top:5px;
     margin:0px;
     text-align:left;
-    font-size: 12px;
+    font-size: 11px;
     text-decoration:none;
     overflow:hidden;
     text-wrap:wrap;
     -webkit-text-size-adjust:100%;
+}
+
+/* #textBox content styles (injected via JS, not inside pre>code) */
+#textBox li {
+    font-size: 11px;
+    line-height: 1.8;
+    display: list-item;
+    margin-left: 16px;
+}
+
+#textBox ul, #textBox ol {
+    padding-left: 0;
+    margin: 6px 0;
+}
+
+#textBox h1 { font-size: 15px; margin: 8px 0 4px; }
+#textBox h2 { font-size: 14px; margin: 8px 0 4px; }
+#textBox h3 { font-size: 13px; margin: 6px 0 3px; line-height: 1.4; }
+#textBox h4 { font-size: 12px; margin: 4px 0 2px; }
+
+#textBox table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    border: 1px solid black;
+    width: 100%;
+    margin: 6px 0;
+}
+
+#textBox th, #textBox td {
+    border: 1px solid black;
+    padding: 6px;
+    text-align: left;
+    font-size: 11px;
+    line-height: 1.5;
 }
 
 body main article pre code h1.pageTitle {
@@ -417,7 +453,9 @@ body footer a:link:hover, footer a:visited:hover {
         margin-bottom: 5px;
     }
 
-    body header .headerBottom li, a, button{
+    body header .headerBottom li,
+    body header .headerBottom a,
+    body header .headerBottom button {
         font-size: 20px;
     }
     
@@ -525,7 +563,9 @@ body footer a:link:hover, footer a:visited:hover {
         margin-bottom: 5px;
     }
 
-    body header .headerBottom li, a, button{
+    body header .headerBottom li,
+    body header .headerBottom a,
+    body header .headerBottom button {
         font-size: 15px;
     }
     

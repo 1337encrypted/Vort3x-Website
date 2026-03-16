@@ -291,7 +291,9 @@ body footer a:link:hover, footer a:visited:hover {
         margin-bottom: 5px;
     }
 
-    body header .headerBottom li, a, button{
+    body header .headerBottom li,
+    body header .headerBottom a,
+    body header .headerBottom button {
         font-size: 20px;
     }
     
@@ -351,7 +353,9 @@ body footer a:link:hover, footer a:visited:hover {
         margin-bottom: 5px;
     }
 
-    body header .headerBottom li, a, button{
+    body header .headerBottom li,
+    body header .headerBottom a,
+    body header .headerBottom button {
         font-size: 15px;
     }
     
